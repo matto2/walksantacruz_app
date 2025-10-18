@@ -49,12 +49,14 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
 
 <script>
   import L from 'leaflet';
+  import 'leaflet.markercluster';
 
   declare global {
     interface Window {
       mapData: any[];
       mapInstance?: any;
       mapMarkers?: any[];
+      markerClusterGroup?: any;
     }
   }
 
@@ -97,10 +99,20 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
         maxZoom: 19,
       }).addTo(map);
 
+      // Create marker cluster group for better performance with many markers
+      const markerClusterGroup = (L as any).markerClusterGroup({
+        chunkedLoading: true,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        maxClusterRadius: 50
+      });
+      window.markerClusterGroup = markerClusterGroup;
+
       // Add markers for each location
       window.mapMarkers = [];
       window.mapData.forEach(function (item) {
-        const marker = L.marker([item.latitude, item.longitude]).addTo(map);
+        const marker = L.marker([item.latitude, item.longitude]);
         window.mapMarkers.push({ marker, data: item });
 
         const year = parseYear(item.date);
@@ -136,7 +148,13 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
         `;
 
         marker.bindPopup(popupContent, { maxWidth: 300 });
+
+        // Add marker to cluster group instead of directly to map
+        markerClusterGroup.addLayer(marker);
       });
+
+      // Add the cluster group to the map
+      map.addLayer(markerClusterGroup);
 
       // Invalidate size after initialization to fix potential rendering issues
       setTimeout(() => map.invalidateSize(), 100);

@@ -1,2 +1,75 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/* Print styles for walking tour participants */
+@media print {
+  /* Hide navigation and interactive elements */
+  header,
+  footer,
+  nav,
+  #timeline-search,
+  #style-filter,
+  #clear-filters,
+  #results-count,
+  .tab-button,
+  #map,
+  #map-loading,
+  button {
+    display: none !important;
+  }
+
+  /* Show all content without tabs */
+  .tab-content {
+    display: block !important;
+  }
+
+  /* Optimize table for printing */
+  table {
+    page-break-inside: avoid;
+    font-size: 10pt;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  /* Remove shadows and backgrounds */
+  * {
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Add page breaks between major sections */
+  tbody tr:nth-child(5n) {
+    page-break-after: always;
+  }
+
+  /* Optimize links for print */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+
+  /* Add a header on each page */
+  @page {
+    margin: 2cm;
+    @top-center {
+      content: "Walk Santa Cruz Historical Timeline";
+    }
+  }
+
+  /* Show only timeline content */
+  #timeline-content {
+    display: block !important;
+  }
+
+  #map-content {
+    display: none !important;
+  }
+}
