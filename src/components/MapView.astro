@@ -1,0 +1,196 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+let timelineEntries: CollectionEntry<"timeline">[] = [];
+let error: string | null = null;
+
+try {
+  timelineEntries = await getCollection("timeline");
+} catch (e) {
+  error = "Failed to load map data. Please try refreshing the page.";
+  console.error("Error loading timeline for map:", e);
+}
+
+const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
+  title: entry.data.title,
+  date: entry.data.date,
+  location: entry.data.location,
+  address: entry.data.address,
+  latitude: entry.data.latitude,
+  longitude: entry.data.longitude,
+  description: entry.data.description,
+  architecturalStyle: entry.data.architectural_style,
+  sources: entry.data.sources,
+}));
+---
+
+{error ? (
+  <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg" role="alert">
+    <p class="font-medium">Error</p>
+    <p class="text-sm">{error}</p>
+  </div>
+) : mapData.length === 0 ? (
+  <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg" role="alert">
+    <p class="font-medium">No locations found</p>
+    <p class="text-sm">There are no locations to display on the map yet.</p>
+  </div>
+) : (
+  <div>
+    <div id="map-loading" class="w-full h-[600px] rounded-lg shadow-lg bg-gray-100 flex items-center justify-center">
+      <div class="text-center">
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 mb-4" style="border-color: rgb(226, 111, 4);"></div>
+        <p class="text-gray-600">Loading map...</p>
+      </div>
+    </div>
+    <div id="map" class="w-full h-[600px] rounded-lg shadow-lg hidden"></div>
+    <script is:inline set:html={`window.mapData = ${JSON.stringify(mapData)};`} />
+  </div>
+)}
+
+<script>
+  import L from 'leaflet';
+
+  declare global {
+    interface Window {
+      mapData: any[];
+      mapInstance?: any;
+      mapMarkers?: any[];
+    }
+  }
+
+  // Helper function to parse date safely
+  function parseYear(dateString) {
+    // Handle YYYY-MM-DD format - extract year directly from string
+    if (dateString.includes('-')) {
+      return parseInt(dateString.split('-')[0], 10);
+    }
+    // Handle YYYY format
+    return parseInt(dateString, 10);
+  }
+
+  // Initialize map when the map container is visible
+  function initializeMap() {
+    const mapContainer = document.getElementById("map");
+    const loadingIndicator = document.getElementById("map-loading");
+
+    if (!mapContainer || mapContainer.dataset.initialized === "true") {
+      return;
+    }
+
+    // Mark as initialized to prevent multiple initializations
+    mapContainer.dataset.initialized = "true";
+
+    try {
+      // Show map, hide loading indicator
+      if (loadingIndicator) {
+        loadingIndicator.classList.add("hidden");
+      }
+      mapContainer.classList.remove("hidden");
+
+      // Initialize map centered on Santa Cruz
+      const map = L.map("map").setView([36.9741, -122.0308], 14);
+      window.mapInstance = map; // Store for later use
+
+      // Add OpenStreetMap tiles
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+        maxZoom: 19,
+      }).addTo(map);
+
+      // Add markers for each location
+      window.mapMarkers = [];
+      window.mapData.forEach(function (item) {
+        const marker = L.marker([item.latitude, item.longitude]).addTo(map);
+        window.mapMarkers.push({ marker, data: item });
+
+        const year = parseYear(item.date);
+
+        let popupContent = `
+          <div class="max-w-xs">
+            <h3 class="font-bold text-lg mb-1">${item.title}</h3>
+            <p class="text-sm text-gray-600 mb-2">${year} • ${item.location}</p>
+            ${item.address ? `<p class="text-xs text-gray-500 mb-2">${item.address}</p>` : ""}
+            ${item.architecturalStyle ? `<p class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded inline-block mb-2">${item.architecturalStyle}</p>` : ""}
+            <p class="text-sm mt-2">${item.description}</p>
+            ${
+              item.sources && item.sources.length > 0
+                ? `
+              <div class="mt-2 pt-2 border-t border-gray-200">
+                <p class="text-xs font-semibold mb-1">Sources:</p>
+                <ul class="text-xs space-y-1">
+                  ${item.sources
+                    .map(
+                      (source) => `
+                    <li>
+                      ${source.url ? `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">${source.title}</a>` : source.title}
+                    </li>
+                  `
+                    )
+                    .join("")}
+                </ul>
+              </div>
+            `
+                : ""
+            }
+          </div>
+        `;
+
+        marker.bindPopup(popupContent, { maxWidth: 300 });
+      });
+
+      // Invalidate size after initialization to fix potential rendering issues
+      setTimeout(() => map.invalidateSize(), 100);
+    } catch (error) {
+      console.error("Error initializing map:", error);
+      if (loadingIndicator) {
+        loadingIndicator.innerHTML = '<div class="text-center"><p class="text-red-600">Failed to load map. Please refresh the page.</p></div>';
+      }
+    }
+  }
+
+  // Initialize when map tab becomes visible
+  document.addEventListener("DOMContentLoaded", function () {
+    // Check if map is already visible
+    const mapContent = document.getElementById("map-content");
+    if (mapContent && !mapContent.classList.contains("hidden")) {
+      initializeMap();
+    }
+
+    // Listen for map tab clicks
+    const mapTab = document.getElementById("map-tab");
+    if (mapTab) {
+      mapTab.addEventListener("click", function () {
+        // Small delay to ensure the tab content is visible
+        setTimeout(initializeMap, 50);
+      });
+    }
+  });
+
+  // Listen for center map events from timeline
+  window.addEventListener('centerMap', function(e: any) {
+    const { lat, lng, title } = e.detail;
+
+    // Initialize map first if it hasn't been initialized yet
+    if (!window.mapInstance) {
+      initializeMap();
+    }
+
+    // Wait a bit for map to initialize, then center
+    const centerMap = () => {
+      if (window.mapInstance) {
+        // Center and zoom in close to the location (zoom level 18 = street level)
+        // Just center on the pin to make it easier to identify
+        window.mapInstance.setView([lat, lng], 18, {
+          animate: true,
+          duration: 1
+        });
+      } else {
+        // If map still not ready, try again in a moment
+        setTimeout(centerMap, 100);
+      }
+    };
+
+    // Small delay to ensure map is initialized
+    setTimeout(centerMap, 100);
+  });
+</script>

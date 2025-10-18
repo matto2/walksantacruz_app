@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TimelineView from "../components/TimelineView.astro";
+import MapView from "../components/MapView.astro";
+---
+
+<Layout title="Santa Cruz Historical Timeline">
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="text-white shadow-lg" style="background-color: rgb(226, 111, 4);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex items-center gap-4">
+          <!-- Logo -->
+          <img
+            src="/src/svg/footprints-ICON-white.svg"
+            alt="Walk Santa Cruz Logo"
+            class="w-16 h-16 sm:w-20 sm:h-20"
+          />
+          <!-- Business Name and Tagline -->
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold">Walk Santa Cruz</h1>
+            <p class="mt-1 text-sm sm:text-base opacity-90">
+              Downtown & Mission Hill Walking Tour Timeline
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <div class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 w-full">
+      <div class="border-b border-gray-200">
+        <nav class="flex -mb-px space-x-8" role="tablist" aria-label="Timeline views">
+          <button
+            id="timeline-tab"
+            class="tab-button border-b-2 py-4 px-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-t-md"
+            style="border-color: rgb(226, 111, 4); color: rgb(226, 111, 4); --tw-ring-color: rgb(226, 111, 4);"
+            data-tab="timeline"
+            role="tab"
+            aria-selected="true"
+            aria-controls="timeline-content"
+            tabindex="0"
+          >
+            Timeline
+          </button>
+          <button
+            id="map-tab"
+            class="tab-button border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-t-md"
+            style="--tw-ring-color: rgb(226, 111, 4);"
+            data-tab="map"
+            role="tab"
+            aria-selected="false"
+            aria-controls="map-content"
+            tabindex="-1"
+          >
+            Map View
+          </button>
+        </nav>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="mt-6 mb-12">
+        <!-- Timeline View -->
+        <div
+          id="timeline-content"
+          class="tab-content"
+          role="tabpanel"
+          aria-labelledby="timeline-tab"
+          tabindex="0"
+        >
+          <TimelineView />
+        </div>
+
+        <!-- Map View -->
+        <div
+          id="map-content"
+          class="tab-content hidden"
+          role="tabpanel"
+          aria-labelledby="map-tab"
+          aria-hidden="true"
+          tabindex="0"
+        >
+          <MapView />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <p class="text-center text-sm text-gray-400">
+          Santa Cruz Historical Walking Tour Guide © {new Date().getFullYear()}
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    function switchTab(button: Element) {
+      const tabName = button.getAttribute("data-tab");
+      if (!tabName) return;
+
+      // Remove active state from all tabs
+      tabButtons.forEach((btn) => {
+        btn.style.borderColor = 'transparent';
+        btn.style.color = 'rgb(107, 114, 128)'; // gray-500
+        btn.setAttribute("aria-selected", "false");
+        btn.setAttribute("tabindex", "-1");
+      });
+
+      // Hide all tab contents
+      tabContents.forEach((content) => {
+        content.classList.add("hidden");
+        content.setAttribute("aria-hidden", "true");
+      });
+
+      // Activate clicked tab
+      button.style.borderColor = 'rgb(226, 111, 4)';
+      button.style.color = 'rgb(226, 111, 4)';
+      button.setAttribute("aria-selected", "true");
+      button.setAttribute("tabindex", "0");
+
+      // Show corresponding content
+      const targetContent = document.getElementById(`${tabName}-content`);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+        targetContent.setAttribute("aria-hidden", "false");
+      }
+    }
+
+    // Click handling
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        switchTab(button);
+      });
+    });
+
+    // Keyboard navigation
+    tabButtons.forEach((button, index) => {
+      button.addEventListener("keydown", (e: KeyboardEvent) => {
+        let targetButton: Element | null = null;
+
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          e.preventDefault();
+          targetButton = tabButtons[(index + 1) % tabButtons.length];
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          targetButton = tabButtons[(index - 1 + tabButtons.length) % tabButtons.length];
+        } else if (e.key === "Home") {
+          e.preventDefault();
+          targetButton = tabButtons[0];
+        } else if (e.key === "End") {
+          e.preventDefault();
+          targetButton = tabButtons[tabButtons.length - 1];
+        }
+
+        if (targetButton) {
+          switchTab(targetButton);
+          (targetButton as HTMLElement).focus();
+        }
+      });
+    });
+  </script>
+</Layout>
