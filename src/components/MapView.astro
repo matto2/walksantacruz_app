@@ -60,6 +60,15 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
     }
   }
 
+  // Fix Leaflet default marker icon paths
+  // This resolves the "question mark" icon issue on mobile
+  delete (L.Icon.Default.prototype as any)._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  });
+
   // Helper function to parse date safely
   function parseYear(dateString) {
     // Handle YYYY-MM-DD format - extract year directly from string
