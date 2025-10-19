@@ -39,43 +39,72 @@ const anthropic = new Anthropic({
   apiKey: API_KEY,
 });
 
-const TRANSLATION_PROMPT = (targetLang, content) => `You are a professional translator specializing in historical and cultural content.
+/**
+ * Extracts frontmatter and body from markdown content
+ * Returns { frontmatter: string, body: string }
+ */
+function separateFrontmatter(content) {
+  const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+  const match = content.match(frontmatterRegex);
+
+  if (!match) {
+    throw new Error('Could not parse frontmatter from markdown file');
+  }
+
+  return {
+    frontmatter: match[1], // Content between the --- delimiters
+    body: match[2] // Everything after the closing ---
+  };
+}
+
+/**
+ * Combines frontmatter and translated body back into markdown format
+ */
+function combineFrontmatter(frontmatter, translatedBody) {
+  return `---\n${frontmatter}\n---\n${translatedBody}`;
+}
+
+const TRANSLATION_PROMPT = (targetLang, bodyContent) => `You are a professional translator specializing in historical and cultural content.
 
 Translate the following markdown content into ${targetLang}.
 
 CRITICAL RULES:
-1. Copy the YAML frontmatter (between the --- delimiters) EXACTLY character-by-character from the source
-2. DO NOT translate, modify, or change ANY frontmatter content whatsoever
-3. Frontmatter includes: title, date, location, address, latitude, longitude, description, architectural_style, tags, sources, year_built, altered, historic_status
-4. Keep ALL numbers as numbers (latitude, longitude must stay as numeric values, not strings)
-5. Keep ALL quotes as standard ASCII double quotes ("), never use curly quotes ("")
-6. ONLY translate the markdown body content (everything after the closing ---)
-7. Preserve ALL markdown formatting (headers ##, lists, bold, italic, links, etc.)
-8. Preserve ALL URLs and file paths exactly as they are
-9. Keep proper names like "Santa Cruz", "Mission Hill", "Portola", street names, and building names in English unless they have official ${targetLang} names
-10. Maintain the same paragraph structure and line breaks
-11. Translate naturally and culturally appropriately for ${targetLang} speakers
+1. ONLY translate the content provided below - this is the body content ONLY (no frontmatter)
+2. Preserve ALL markdown formatting (headers ##, lists, bold, italic, links, etc.)
+3. Preserve ALL URLs and file paths exactly as they are
+4. Keep proper names like "Santa Cruz", "Mission Hill", "Portola", street names, and building names in English unless they have official ${targetLang} names
+5. Maintain the same paragraph structure and line breaks
+6. Translate naturally and culturally appropriately for ${targetLang} speakers
+7. Keep dates and numbers in their original format
 
 Here is the content to translate:
 
-${content}
+${bodyContent}
 
-Return ONLY the translated markdown with the EXACT original frontmatter copied character-by-character. Do not add any explanations or notes.`;
+Return ONLY the translated markdown content. Do not add any explanations, notes, or frontmatter.`;
 
 async function translateContent(content, targetLang) {
   try {
+    // Separate frontmatter from body
+    const { frontmatter, body } = separateFrontmatter(content);
+
+    // Translate only the body
     const message = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
       max_tokens: 4000,
       temperature: 0.3,
       messages: [{
         role: 'user',
-        content: TRANSLATION_PROMPT(LANGUAGES[targetLang], content)
+        content: TRANSLATION_PROMPT(LANGUAGES[targetLang], body)
       }]
     });
 
-    const translatedText = message.content[0].text;
-    return translatedText;
+    const translatedBody = message.content[0].text;
+
+    // Combine original frontmatter with translated body
+    const finalContent = combineFrontmatter(frontmatter, translatedBody);
+
+    return finalContent;
   } catch (error) {
     console.error(`Error translating to ${targetLang}:`, error.message);
     throw error;
