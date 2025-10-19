@@ -87,8 +87,12 @@ import MapView from "../components/MapView.astro";
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <p class="text-center text-sm text-gray-400">
-          Walk Santa Cruz - Walking Tour Guide © {new Date().getFullYear()}
+        <p class="text-center text-sm text-gray-400 flex items-center justify-center gap-2">
+          <a href="https://walksantacruz.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-gray-200 transition-colors">
+            <img src="/footprints-ICON-white.svg" alt="Walk Santa Cruz" class="w-5 h-5" />
+            <span>Walk Santa Cruz</span>
+          </a>
+          <span>- Walking Tour Guide © {new Date().getFullYear()}</span>
         </p>
       </div>
     </footer>
