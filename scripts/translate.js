@@ -44,22 +44,23 @@ const TRANSLATION_PROMPT = (targetLang, content) => `You are a professional tran
 Translate the following markdown content into ${targetLang}.
 
 CRITICAL RULES:
-1. PRESERVE the YAML frontmatter EXACTLY as-is - DO NOT translate any frontmatter keys or values
-2. ONLY translate the markdown body content (everything after the second ---)
-3. Preserve ALL markdown formatting (headers ##, lists, bold, italic, links, etc.)
-4. Preserve ALL URLs and file paths exactly as they are
-5. Keep proper names like "Santa Cruz", "Mission Hill", "Portola", street names, and building names in English unless they have official ${targetLang} names
-6. Keep dates, numbers, and coordinates exactly as they are
-7. Maintain the same paragraph structure and line breaks
-8. Translate naturally and culturally appropriately for ${targetLang} speakers
-9. For architectural terms, use the appropriate ${targetLang} translation
-10. Keep any special characters and punctuation appropriate for ${targetLang}
+1. Copy the YAML frontmatter (between the --- delimiters) EXACTLY character-by-character from the source
+2. DO NOT translate, modify, or change ANY frontmatter content whatsoever
+3. Frontmatter includes: title, date, location, address, latitude, longitude, description, architectural_style, tags, sources, year_built, altered, historic_status
+4. Keep ALL numbers as numbers (latitude, longitude must stay as numeric values, not strings)
+5. Keep ALL quotes as standard ASCII double quotes ("), never use curly quotes ("")
+6. ONLY translate the markdown body content (everything after the closing ---)
+7. Preserve ALL markdown formatting (headers ##, lists, bold, italic, links, etc.)
+8. Preserve ALL URLs and file paths exactly as they are
+9. Keep proper names like "Santa Cruz", "Mission Hill", "Portola", street names, and building names in English unless they have official ${targetLang} names
+10. Maintain the same paragraph structure and line breaks
+11. Translate naturally and culturally appropriately for ${targetLang} speakers
 
 Here is the content to translate:
 
 ${content}
 
-Return ONLY the translated markdown with the original frontmatter. Do not add any explanations or notes.`;
+Return ONLY the translated markdown with the EXACT original frontmatter copied character-by-character. Do not add any explanations or notes.`;
 
 async function translateContent(content, targetLang) {
   try {
