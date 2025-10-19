@@ -64,7 +64,7 @@ Return ONLY the translated markdown with the original frontmatter. Do not add an
 async function translateContent(content, targetLang) {
   try {
     const message = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'claude-3-haiku-20240307',
       max_tokens: 4000,
       temperature: 0.3,
       messages: [{
