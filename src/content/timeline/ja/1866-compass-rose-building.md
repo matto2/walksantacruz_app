@@ -15,6 +15,7 @@ tags:
 sources:
   - title: "Santa Cruz Waves - ルル・カーペンターズ: 仕立屋の印"
   - title: "サンタクルーズ歴史委員会"
+---
 
 ## **歴史:**
 
