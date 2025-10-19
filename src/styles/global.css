@@ -1,6 +1,31 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Fix mobile scrolling issues with Leaflet map */
+#map {
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent body scroll lock when map is active on mobile */
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure map container doesn't interfere with page scrolling */
+.leaflet-container {
+  touch-action: pan-x pan-y;
+}
+
+/* Fix iOS Safari height issues */
+@supports (-webkit-touch-callout: none) {
+  #map {
+    height: 600px !important;
+    min-height: 600px;
+  }
+}
+
 /* Print styles for walking tour participants */
 @media print {
   /* Hide navigation and interactive elements */

@@ -99,8 +99,19 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
       mapContainer.classList.remove("hidden");
 
       // Initialize map centered on Santa Cruz
-      const map = L.map("map").setView([36.9741, -122.0308], 14);
+      const map = L.map("map", {
+        scrollWheelZoom: true,
+        tap: true,
+        touchZoom: true,
+        dragging: true,
+        // Prevent map from interfering with page scrolling on mobile
+        trackResize: true,
+        zoomControl: true
+      }).setView([36.9741, -122.0308], 14);
       window.mapInstance = map; // Store for later use
+
+      // Disable tap handler on mobile to prevent freezing
+      if (map.tap) map.tap.disable();
 
       // Add OpenStreetMap tiles
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -188,9 +199,33 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
     if (mapTab) {
       mapTab.addEventListener("click", function () {
         // Small delay to ensure the tab content is visible
-        setTimeout(initializeMap, 50);
+        setTimeout(() => {
+          initializeMap();
+          // Fix for mobile: invalidate size again after tab switch
+          if (window.mapInstance) {
+            setTimeout(() => {
+              window.mapInstance.invalidateSize();
+            }, 250);
+          }
+        }, 50);
       });
     }
+
+    // Handle orientation changes on mobile
+    window.addEventListener('orientationchange', function() {
+      if (window.mapInstance) {
+        setTimeout(() => {
+          window.mapInstance.invalidateSize();
+        }, 200);
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.mapInstance) {
+        window.mapInstance.invalidateSize();
+      }
+    });
   });
 
   // Listen for center map events from timeline
