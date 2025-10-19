@@ -1,36 +1,35 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 
-// For static generation, load only English entries by default
-// Language switching will trigger a page reload
+// For static generation, load ALL language entries
+// Client-side JavaScript will filter based on localStorage
 let timelineEntries: CollectionEntry<"timeline">[] = [];
 let error: string | null = null;
 
 try {
-  // Load all entries
-  const allEntries = await getCollection("timeline");
-
-  // Filter for English entries only (default)
-  timelineEntries = allEntries.filter(entry => {
-    const pathParts = entry.id.split('/');
-    return pathParts[0] === 'en';
-  });
+  // Load ALL entries from all languages
+  timelineEntries = await getCollection("timeline");
 } catch (e) {
   error = "Failed to load map data. Please try refreshing the page.";
   console.error("Error loading timeline for map:", e);
 }
 
-const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
-  title: entry.data.title,
-  date: entry.data.date,
-  location: entry.data.location,
-  address: entry.data.address,
-  latitude: entry.data.latitude,
-  longitude: entry.data.longitude,
-  description: entry.data.description,
-  architecturalStyle: entry.data.architectural_style,
-  sources: entry.data.sources,
-}));
+// Create map data for ALL languages, each entry tagged with its language
+const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
+  const lang = entry.id.split('/')[0];
+  return {
+    title: entry.data.title,
+    date: entry.data.date,
+    location: entry.data.location,
+    address: entry.data.address,
+    latitude: entry.data.latitude,
+    longitude: entry.data.longitude,
+    description: entry.data.description,
+    architecturalStyle: entry.data.architectural_style,
+    sources: entry.data.sources,
+    lang: lang, // Add language tag
+  };
+});
 ---
 
 {error ? (
@@ -138,9 +137,15 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => ({
       });
       window.markerClusterGroup = markerClusterGroup;
 
-      // Add markers for each location
+      // Get current language preference
+      const currentLanguage = localStorage.getItem('preferred-language') || 'en';
+
+      // Filter map data by current language
+      const filteredMapData = window.mapData.filter(item => item.lang === currentLanguage);
+
+      // Add markers for each location (filtered by language)
       window.mapMarkers = [];
-      window.mapData.forEach(function (item) {
+      filteredMapData.forEach(function (item) {
         const marker = L.marker([item.latitude, item.longitude]);
         window.mapMarkers.push({ marker, data: item });
 

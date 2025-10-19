@@ -8,14 +8,9 @@ let timelineEntries: CollectionEntry<"timeline">[] = [];
 let error: string | null = null;
 
 try {
-  // Load all entries
-  const allEntries = await getCollection("timeline");
-
-  // Filter for English entries only (default)
-  timelineEntries = allEntries.filter(entry => {
-    const pathParts = entry.id.split('/');
-    return pathParts[0] === 'en';
-  });
+  // Load ALL entries from all languages
+  // Client-side JavaScript will filter based on localStorage
+  timelineEntries = await getCollection("timeline");
 } catch (e) {
   error = "Failed to load timeline entries. Please try refreshing the page.";
   console.error("Error loading timeline:", e);
@@ -100,10 +95,8 @@ function parseYear(dateString: string): number {
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
-      {
-        entriesWithContent.map(
-          ({ entry }, index) => (
-            <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+      {entriesWithContent.map(({ entry }, index) => (
+          <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"} data-lang={entry.id.split('/')[0]}>
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 {parseYear(entry.data.date)}
               </td>
@@ -163,10 +156,8 @@ function parseYear(dateString: string): number {
                   );
                 })()}
               </td>
-            </tr>
-          )
-        )
-      }
+          </tr>
+      ))}
     </tbody>
   </table>
   </div>
@@ -393,12 +384,15 @@ function parseYear(dateString: string): number {
     });
   });
 
+  // Language filtering functionality
+  const currentLanguage = localStorage.getItem('preferred-language') || 'en';
+
   // Search functionality
   const searchInput = document.getElementById('timeline-search') as HTMLInputElement;
   const noResults = document.getElementById('no-results') as HTMLElement;
   const tableRows = document.querySelectorAll('tbody tr');
 
-  function searchTable() {
+  function filterTable() {
     const searchTerm = searchInput.value.toLowerCase().trim();
     let visibleCount = 0;
 
@@ -411,14 +405,18 @@ function parseYear(dateString: string): number {
 
       const title = titleCell.textContent?.toLowerCase() || '';
       const location = locationCell.textContent?.toLowerCase() || '';
+      const rowLang = rowElement.dataset.lang || 'en';
+
+      // Check language match
+      const matchesLanguage = rowLang === currentLanguage;
 
       // Check search match
       const matchesSearch = !searchTerm ||
         title.includes(searchTerm) ||
         location.includes(searchTerm);
 
-      // Show/hide row
-      if (matchesSearch) {
+      // Show/hide row based on both language and search
+      if (matchesLanguage && matchesSearch) {
         rowElement.style.display = '';
         visibleCount++;
       } else {
@@ -434,8 +432,11 @@ function parseYear(dateString: string): number {
     }
   }
 
+  // Run filter on page load
+  filterTable();
+
   // Event listener
   if (searchInput) {
-    searchInput.addEventListener('input', searchTable);
+    searchInput.addEventListener('input', filterTable);
   }
 </script>
