@@ -30,30 +30,95 @@ import MapView from "../components/MapView.astro";
     <!-- Tab Navigation -->
     <div class="flex-grow w-full bg-white">
       <div class="sticky top-0 z-[1001] bg-white border-b border-gray-200 shadow-md">
-        <nav class="flex -mb-px space-x-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white" role="tablist" aria-label="Timeline views">
-          <button
-            id="timeline-tab"
-            class="tab-button border-b-2 py-4 px-1 text-sm font-medium focus:outline-none"
-            style="border-color: rgb(226, 111, 4); color: rgb(226, 111, 4);"
-            data-tab="timeline"
-            role="tab"
-            aria-selected="true"
-            aria-controls="timeline-content"
-            tabindex="0"
-          >
-            Timeline
-          </button>
-          <button
-            id="map-tab"
-            class="tab-button border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 text-sm font-medium focus:outline-none"
-            data-tab="map"
-            role="tab"
-            aria-selected="false"
-            aria-controls="map-content"
-            tabindex="-1"
-          >
-            Map View
-          </button>
+        <nav class="flex items-center justify-between -mb-px max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white" role="tablist" aria-label="Timeline views">
+          <!-- Left: Tab Buttons -->
+          <div class="flex space-x-8">
+            <button
+              id="timeline-tab"
+              class="tab-button border-b-2 py-4 px-1 text-sm font-medium focus:outline-none"
+              style="border-color: rgb(226, 111, 4); color: rgb(226, 111, 4);"
+              data-tab="timeline"
+              role="tab"
+              aria-selected="true"
+              aria-controls="timeline-content"
+              tabindex="0"
+            >
+              Timeline
+            </button>
+            <button
+              id="map-tab"
+              class="tab-button border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 text-sm font-medium focus:outline-none"
+              data-tab="map"
+              role="tab"
+              aria-selected="false"
+              aria-controls="map-content"
+              tabindex="-1"
+            >
+              Map View
+            </button>
+          </div>
+
+          <!-- Right: Language Selector -->
+          <div class="relative py-2">
+            <button
+              id="language-button"
+              class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors"
+              style="--tw-ring-color: rgb(226, 111, 4);"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+              <span id="current-language">English</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div
+              id="language-dropdown"
+              class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[1002]"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="language-button"
+            >
+              <div class="py-1" role="none">
+                <button
+                  class="language-option w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  data-lang="en"
+                  role="menuitem"
+                >
+                  <span class="font-medium">English</span>
+                </button>
+                <button
+                  class="language-option w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  data-lang="es"
+                  role="menuitem"
+                >
+                  <span class="font-medium">Español</span>
+                  <span class="text-gray-500 text-xs ml-2">(Spanish)</span>
+                </button>
+                <button
+                  class="language-option w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  data-lang="zh-CN"
+                  role="menuitem"
+                >
+                  <span class="font-medium">中文</span>
+                  <span class="text-gray-500 text-xs ml-2">(Chinese)</span>
+                </button>
+                <button
+                  class="language-option w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  data-lang="ja"
+                  role="menuitem"
+                >
+                  <span class="font-medium">日本語</span>
+                  <span class="text-gray-500 text-xs ml-2">(Japanese)</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
 
@@ -164,6 +229,97 @@ import MapView from "../components/MapView.astro";
         if (targetButton) {
           switchTab(targetButton);
           (targetButton as HTMLElement).focus();
+        }
+      });
+    });
+
+    // Language selector functionality
+    const languageButton = document.getElementById("language-button");
+    const languageDropdown = document.getElementById("language-dropdown");
+    const currentLanguageSpan = document.getElementById("current-language");
+    const languageOptions = document.querySelectorAll(".language-option");
+
+    const LANGUAGE_LABELS: Record<string, string> = {
+      'en': 'English',
+      'es': 'Español',
+      'zh-CN': '中文',
+      'ja': '日本語'
+    };
+
+    // Cookie helper functions
+    function setCookie(name: string, value: string, days: number = 365) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+    }
+
+    function getCookie(name: string): string | null {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    // Initialize language from localStorage or cookie
+    function getCurrentLanguage(): string {
+      const stored = localStorage.getItem('preferred-language');
+      const cookie = getCookie('preferred-language');
+      return stored || cookie || 'en';
+    }
+
+    function setCurrentLanguage(lang: string) {
+      localStorage.setItem('preferred-language', lang);
+      setCookie('preferred-language', lang);
+      if (currentLanguageSpan) {
+        currentLanguageSpan.textContent = LANGUAGE_LABELS[lang] || 'English';
+      }
+      // Dispatch custom event for language change
+      window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: lang } }));
+    }
+
+    // Set initial language and cookie
+    const initialLang = getCurrentLanguage();
+    setCookie('preferred-language', initialLang); // Sync to cookie
+    if (currentLanguageSpan) {
+      currentLanguageSpan.textContent = LANGUAGE_LABELS[initialLang] || 'English';
+    }
+
+    // Toggle dropdown
+    if (languageButton && languageDropdown) {
+      languageButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isHidden = languageDropdown.classList.contains("hidden");
+        languageDropdown.classList.toggle("hidden");
+        languageButton.setAttribute("aria-expanded", isHidden ? "true" : "false");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!languageButton.contains(e.target as Node) && !languageDropdown.contains(e.target as Node)) {
+          languageDropdown.classList.add("hidden");
+          languageButton.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    // Handle language selection
+    languageOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const lang = option.getAttribute("data-lang");
+        if (lang) {
+          setCurrentLanguage(lang);
+          if (languageDropdown) {
+            languageDropdown.classList.add("hidden");
+          }
+          if (languageButton) {
+            languageButton.setAttribute("aria-expanded", "false");
+          }
+          // Reload page to load new language content
+          window.location.reload();
         }
       });
     });

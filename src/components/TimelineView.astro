@@ -2,11 +2,20 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getStyleColor } from "../content/config";
 
+// For static generation, load only English entries by default
+// Language switching will trigger a page reload
 let timelineEntries: CollectionEntry<"timeline">[] = [];
 let error: string | null = null;
 
 try {
-  timelineEntries = await getCollection("timeline");
+  // Load all entries
+  const allEntries = await getCollection("timeline");
+
+  // Filter for English entries only (default)
+  timelineEntries = allEntries.filter(entry => {
+    const pathParts = entry.id.split('/');
+    return pathParts[0] === 'en';
+  });
 } catch (e) {
   error = "Failed to load timeline entries. Please try refreshing the page.";
   console.error("Error loading timeline:", e);
