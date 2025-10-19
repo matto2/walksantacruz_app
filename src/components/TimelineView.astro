@@ -56,9 +56,9 @@ function parseYear(dateString: string): number {
   </div>
 ) : (
 <div>
-  <!-- Search Bar - Sticky below tabs -->
-  <div class="sticky top-[57px] z-20 bg-white pb-6 shadow-sm">
-    <div class="relative pt-6">
+  <!-- Search Bar -->
+  <div class="mb-6">
+    <div class="relative">
       <input
         type="text"
         id="timeline-search"
@@ -67,7 +67,7 @@ function parseYear(dateString: string): number {
         style="--tw-ring-color: rgb(226, 111, 4);"
         aria-label="Search timeline entries"
       />
-      <svg class="absolute left-3 top-9.5 h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
     </div>
@@ -79,16 +79,15 @@ function parseYear(dateString: string): number {
     <p class="text-sm">Try adjusting your search.</p>
   </div>
 
+  <!-- Table -->
   <div class="overflow-x-auto">
   <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
-    <thead class="sticky top-[129px] z-10 text-white shadow-sm" style="background-color: rgb(226, 111, 4);">
+    <thead class="text-white" style="background-color: rgb(226, 111, 4);">
       <tr>
         <th class="px-6 py-3 text-left text-sm font-semibold">Date</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Title</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Location</th>
-        <th class="px-6 py-3 text-left text-sm font-semibold"
-          >Architectural Style</th
-        >
+        <th class="px-6 py-3 text-left text-sm font-semibold">Architectural Style</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
