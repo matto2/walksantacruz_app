@@ -1,15 +1,16 @@
 ---
-title: "1876年のミッション・ヒル・トンネル(トンネル8)"
+title: "1876 Mission Hill Tunnel (Tunnel 8)"
 date: "1876-10-02"
-location: "ミッション・ヒル、サンタクルーズ"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.97611762094308
 longitude: -122.03009699830011
-description: "1876年に旧ミッション墓地の下に建設されたこの918フィートのトンネルは、サンタクルーズ&フェルトン鉄道をパシフィック・アベニューを下らずに桟橋につなげました。今日でも使用されており、サンタクルーズ郡で唯一の現役の鉄道トンネルです。"
-address: "チェスナット通りとグリーン通りの近くにある東側の入口、カリフォルニア州サンタクルーズ"
+description: "Built in 1876 under the old mission cemetery, this 918-foot tunnel linked the Santa Cruz & Felton Railroad to the wharf without sending locomotives down Pacific Avenue. Still in use today, it's the last functioning railroad tunnel in Santa Cruz County."
+address: "Eastern portal near Chestnut Street and Green Street, Santa Cruz, California"
 year_built: 1876
-architectural_style: "木製フレームの鉄道トンネル、後に使用されたコンクリートの入口"
+architectural_style: "Railroad bore with timber framing, later concrete portals"
 altered: true
-historic_status: "サンタクルーズ・ビッグ・ツリー&パシフィック鉄道の一部として現役で稼働しており、郡内で唯一の現役の元の鉄道トンネル"
+historic_status: "Still active as part of the Santa Cruz Big Trees & Pacific Railway; the only original rail tunnel in the county still in service"
+---
 
 ## 丘の下の通路
 

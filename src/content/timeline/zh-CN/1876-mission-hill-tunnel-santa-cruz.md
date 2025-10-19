@@ -1,15 +1,15 @@
 ---
-title: "1876年米慎山隧道(隧道8号)"
+title: "1876 Mission Hill Tunnel (Tunnel 8)"
 date: "1876-10-02"
-location: "Santa Cruz的米慎山"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.97611762094308
 longitude: -122.03009699830011
-description: "这条918英尺长的隧道于1876年在旧米慎教堂墓地下修建,将Santa Cruz & Felton铁路连接到码头,避免了机车经过太平洋大道。如今仍在使用,是Santa Cruz县最后一条仍在运营的铁路隧道。"
-address: "靠近Chestnut Street和Green Street的东部入口,加利福尼亚州Santa Cruz"
+description: "Built in 1876 under the old mission cemetery, this 918-foot tunnel linked the Santa Cruz & Felton Railroad to the wharf without sending locomotives down Pacific Avenue. Still in use today, it's the last functioning railroad tunnel in Santa Cruz County."
+address: "Eastern portal near Chestnut Street and Green Street, Santa Cruz, California"
 year_built: 1876
-architectural_style: "带木质框架的铁路隧道,后来改建为混凝土入口"
+architectural_style: "Railroad bore with timber framing, later concrete portals"
 altered: true
-historic_status: "仍作为Santa Cruz大树和太平洋铁路的一部分运营,是该县唯一仍在使用的原有铁路隧道"
+historic_status: "Still active as part of the Santa Cruz Big Trees & Pacific Railway; the only original rail tunnel in the county still in service"
 ---
 
 ## 穿越山丘的通道
