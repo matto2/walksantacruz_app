@@ -14,24 +14,20 @@ historic_status: "Still active as part of the Santa Cruz Big Trees & Pacific Rai
 
 ## A Passage Beneath the Hill
 
-When the **Santa Cruz & Felton Railroad** began laying track in 1876, the city refused to allow noisy steam engines down Pacific Avenue. The solution was bold: **dig a tunnel straight through Mission Hill**, directly beneath the old Mission Santa Cruz cemetery. Crews began work that January, and by **October 2, 1876**, they had broken through the 918-foot bore. Just eight days later, the first train rolled through to the beach and wharf.
+When the Santa Cruz & Felton Railroad laid its tracks in 1875, the company's original plan called for running straight down Pacific Avenue to the Railroad Wharf, carrying redwood lumber, lime, leather, powder, and other freight to waiting ships bound for San Francisco and beyond. But city leaders, protective of Pacific Avenue's role as the main downtown retail and pedestrian corridor, passed an ordinance prohibiting the noisy, smoky steam locomotives from traveling through the heart of the growing downtown.
 
-The tunnel gave Santa Cruz a vital freight lifeline, carrying redwood lumber, lime, and passengers to the sea—an artery of commerce that bypassed downtown entirely.
+The solution was bold: bore a tunnel straight through Mission Hill, directly beneath the old Mission Santa Cruz complex, bypassing downtown entirely. Construction began in January 1876. By October 2, crews had broken through the 918-foot bore, and on October 10, 1876, the first train rolled through to the beach and wharf.
 
-## Bones Beneath the Rails
-
-The tunnel’s path under the mission cemetery led to one of Santa Cruz’s most enduring legends. Over the years, **rail workers claimed that bones occasionally fell through the tunnel ceiling**, shaken loose by passing trains. The story—part folklore, part historical rumor—still circulates today, fueled by the knowledge that the tunnel really does run beneath the old burial ground.  
-
-As *Santa Cruz Trains* described it, bones were “known to drop to the tracks over the years in their gradual migration downward,” and *Corvid Sketcher* adds that “a bone or two would fall onto the line, leaving a macabre find for rail crews.” Whether apocryphal or true, it’s a story that has haunted Mission Hill for generations.
-
-## The Little Depot by the Portal
-
-In **1879**, after the South Pacific Coast Railroad took control of the line, a **small passenger depot** was built just outside the **east portal** at **Chestnut (then Cherry) Street**. This compact wooden structure served passengers using the tunnel and sat **directly across the street from the rival Santa Cruz Railroad depot**, creating a rare sight: two competing rail stations nearly facing each other.  
-
-The little depot operated for about a decade, handling local passenger traffic and small freight shipments until the **new Union Depot opened in 1893**, consolidating rail services downtown. By the early 1900s, the building was gone, leaving only the tunnel itself to carry the city’s remaining trains.
+Over the years, rail workers claimed that bones occasionally fell through the tunnel ceiling, shaken loose by passing trains—a rumor fueled by the knowledge that the tunnel really does run beneath the old mission burial ground.
 
 ## From Steam to Today
 
-In **1907**, the tunnel was widened for standard-gauge trains, its portals rebuilt and squared off in concrete. It remained an essential route for freight and later for the beloved **“Beach Train”** excursions that still rumble through today.  
+Between 1904 and 1909, the tunnel was widened for standard-gauge trains, its portals rebuilt and squared off in concrete, and the tunnel lengthened to 927 feet. It remained an essential route for freight and later for the beloved "Beach Train" excursions that still rumble through today.
 
-Standing above Mission Hill, few realize that beneath their feet runs a living piece of 19th-century engineering—**a silent passage through history, soil, and rumor**, where the past sometimes seems just a few feet below the surface.
+## Sources
+
+- https://www.santacruztrains.com/2020/03/tunnels-mission-hill-tunnel-8.html
+- https://www.santacruztrains.com/2019/10/railroads-santa-cruz-felton-railroad.html
+- https://www.santacruztrains.com/2020/03/streetcars-pacific-avenue-street.html
+- https://www.santacruztrains.com/2020/08/freight-stops-santa-cruz-wharves.html
+- https://en.wikipedia.org/wiki/South_Pacific_Coast_Railroad
