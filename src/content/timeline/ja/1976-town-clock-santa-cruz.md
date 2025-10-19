@@ -4,7 +4,7 @@ date: "1976-07-04"
 location: "Downtown Santa Cruz"
 latitude: 36.977156
 longitude: -122.026925
-description: "Dedicated on July 4, 1976 as a Bicentennial project, the Town Clock reuses the IOOF building's early-1900 clockworks; it was erected over the 1967 Morris Memorial Fountain and later gained an earthquake memorial plaque."
+description: "Dedicated on July 4, 1976 as a Bicentennial project, the Town Clock reuses the IOOF building’s early-1900 clockworks; it was erected over the 1967 Morris Memorial Fountain and later gained an earthquake memorial plaque."
 address: "N Pacific Ave & Water St, Santa Cruz, California"
 year_built: 1976
 architectural_style: "Spanish Colonial Revival"

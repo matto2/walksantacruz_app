@@ -5,7 +5,7 @@ location: "Santa Cruz, California"
 address: "1545 Pacific Avenue"
 latitude: 36.9763
 longitude: -122.02695284599208
-description: "El edificio más antiguo de Pacific Avenue, construido por Alfred Baldwin en 1866. Uno de los pocos edificios de ladrillo que sobrevivieron al terremoto de Loma Prieta de 1989. Posteriormente renombrado como Compass Rose Building después de la rosa de los vientos estampada en el patio de enfrente."
+description: "The oldest building on Pacific Avenue, built by Alfred Baldwin in 1866. One of the few brick buildings to survive the 1989 Loma Prieta earthquake. Later renamed the Compass Rose Building after the compass rose stamped in the patio across the street."
 architectural_style: "Italianate"
 tags:
   - "historic"

@@ -4,12 +4,12 @@ date: "1894-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.97479
 longitude: -122.026
-description: "Construido entre 1894 y 1895 como el Palacio de Justicia del Condado de Santa Cruz (estilo Richardsoniano Románico). Remodelado por Max Walden y reabierto en 1972 como el Cooper House; demolido después del terremoto de Loma Prieta de 1989."
+description: "Built 1894–1895 as the Santa Cruz County Courthouse (Richardsonian Romanesque). Redeveloped by Max Walden and reopened in 1972 as the Cooper House; demolished after the 1989 Loma Prieta earthquake."
 address: "110 Cooper Street"
 year_built: 1894
-architectural_style: "Richardsoniano Románico"
+architectural_style: "Richardsonian Romanesque"
 altered: true
-historic_status: "Antiguo Palacio de Justicia #5 del Condado de Santa Cruz; posteriormente Cooper House; el sitio ahora forma parte de Abbott Square/MAH"
+historic_status: "Former Santa Cruz County Courthouse #5; later Cooper House; site now part of Abbott Square/MAH"
 ---
 
 ## Resumen

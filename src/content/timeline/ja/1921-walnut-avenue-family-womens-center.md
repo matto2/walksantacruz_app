@@ -1,15 +1,15 @@
 ---
-title: "Walnut Avenue Family & Women's Center"
+title: "Walnut Avenue Family & Women’s Center"
 date: "1921-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.9725
 longitude: -122.0308
-description: "1921年にSalvator and Frances Bagnell Fachutar夫妻によって家庭と音楽スタジオとして建設された303 Walnut Avenueは、後にサンタクルーズYWCAの拠点となり、地域の女性やユースのプログラムの中心的な役割を果たしてきました。"
+description: "Built in 1921 by Salvator and Frances Bagnell Fachutar as a home and music studio, 303 Walnut Avenue later became the Santa Cruz YWCA, a cornerstone for women’s and youth programs in the community."
 address: "303 Walnut Avenue, Santa Cruz, California"
 year_built: 1921
-architectural_style: "クラフツマン/スペイニッシュ・リバイバル様式の融合"
+architectural_style: "Craftsman / Spanish Revival blend"
 altered: true
-historic_status: "文化的・社会的歴史上の地域的に重要な建物。現在はWalnut Avenue Family & Women's Centerとして運営されています。"
+historic_status: "Locally significant for cultural and social history; home of the Walnut Avenue Family & Women’s Center"
 ---
 
 ## 起源: 音楽と芸術の拠点

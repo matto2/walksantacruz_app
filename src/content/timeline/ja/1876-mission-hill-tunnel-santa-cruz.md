@@ -4,7 +4,7 @@ date: "1876-10-02"
 location: "Mission Hill, Santa Cruz"
 latitude: 36.97611762094308
 longitude: -122.03009699830011
-description: "Built in 1876 under the old mission cemetery, this 918-foot tunnel linked the Santa Cruz & Felton Railroad to the wharf without sending locomotives down Pacific Avenue. Still in use today, it's the last functioning railroad tunnel in Santa Cruz County."
+description: "Built in 1876 under the old mission cemetery, this 918-foot tunnel linked the Santa Cruz & Felton Railroad to the wharf without sending locomotives down Pacific Avenue. Still in use today, it’s the last functioning railroad tunnel in Santa Cruz County."
 address: "Eastern portal near Chestnut Street and Green Street, Santa Cruz, California"
 year_built: 1876
 architectural_style: "Railroad bore with timber framing, later concrete portals"

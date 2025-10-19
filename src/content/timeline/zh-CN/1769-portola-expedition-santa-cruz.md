@@ -1,15 +1,15 @@
 ---
-title: "波尔托拉探险队营地 (1769年)"
+title: "Portolá Expedition Campsite (1769)"
 date: "1769-10-17"
-location: "Santa Cruz下圣洛伦佐河"
+location: "Lower San Lorenzo River, Santa Cruz"
 latitude: 36.97304077157908
 longitude: -122.02301632297392
-description: "1769年10月17日,波尔托拉探险队渡过圣洛伦佐河并在附近扎营,这标志着欧洲人首次记录到现今Santa Cruz地区的到访。"
-address: "大约在Soquel大道桥附近,Santa Cruz,加利福尼亚州"
+description: "On October 17, 1769, the Portolá Expedition forded the San Lorenzo River and camped nearby, marking the first recorded European presence in what is now Santa Cruz."
+address: "Approx. near Soquel Avenue Bridge, Santa Cruz, California"
 year_built: 1769
-architectural_style: "无 (营地 / 探险地标)"
+architectural_style: "None (Campsite / Exploration Landmark)"
 altered: false
-historic_status: "由波尔托拉探险队的历史标记和日记记录下来"
+historic_status: "Commemorated by historical markers and diaries of the Portolá Expedition"
 ---
 
 ## 概述

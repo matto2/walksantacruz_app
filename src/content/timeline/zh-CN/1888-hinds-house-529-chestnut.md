@@ -4,12 +4,12 @@ date: "1888-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.9736
 longitude: -122.0311
-description: "建于1888–89年,由阿尔弗雷德·J·欣兹(Alfred J. Hinds)在棍棒-伊斯特莱克风格(Stick‑Eastlake)下建造的欣兹之家(Hinds House)是圣克鲁斯市中心最早装有电灯的住宅之一,其中一个原装电灯装置至今仍在使用。"
+description: "Built 1888–89 by Alfred J. Hinds in Stick‑Eastlake style, the Hinds House is one of the first downtown homes in Santa Cruz to be wired for electricity, with a surviving fixture installed from Davenport power lines."
 address: "529 Chestnut Street, Santa Cruz, California"
 year_built: 1888
-architectural_style: "棍棒-伊斯特莱克维多利亚式"
+architectural_style: "Stick‑Eastlake Victorian"
 altered: true
-historic_status: "列入国家历史遗产名录(NRHP #83001241);被指定为圣克鲁斯历史地标"
+historic_status: "Listed on the National Register of Historic Places (NRHP #83001241); designated Santa Cruz Historic Landmark"
 ---
 
 当阿尔弗雷德·J·欣兹(Alfred J. Hinds)和妻子萨拉(Sarah)于**1889年**搬进新家时,他们不仅建造了圣克鲁斯最宏伟的住宅之一,还开创了未来。这座房子由当地著名建筑师**约翰·H·威廉姆斯(John H. Williams)**设计,他在该地区留下了约六十座建筑作品。

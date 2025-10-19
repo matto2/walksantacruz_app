@@ -1,15 +1,15 @@
 ---
-title: "Campamento de la Expedición de Portolá (1769)"
+title: "Portolá Expedition Campsite (1769)"
 date: "1769-10-17"
-location: "Parte baja del río San Lorenzo, Santa Cruz"
+location: "Lower San Lorenzo River, Santa Cruz"
 latitude: 36.97304077157908
 longitude: -122.02301632297392
-description: "El 17 de octubre de 1769, la Expedición de Portolá cruzó el río San Lorenzo y acampó cerca, marcando la primera presencia europea registrada en lo que hoy es Santa Cruz."
-address: "Aproximadamente cerca del puente de Soquel Avenue, Santa Cruz, California"
+description: "On October 17, 1769, the Portolá Expedition forded the San Lorenzo River and camped nearby, marking the first recorded European presence in what is now Santa Cruz."
+address: "Approx. near Soquel Avenue Bridge, Santa Cruz, California"
 year_built: 1769
-architectural_style: "Ninguno (Campamento / Hito de exploración)"
+architectural_style: "None (Campsite / Exploration Landmark)"
 altered: false
-historic_status: "Conmemorado por marcadores históricos y diarios de la Expedición de Portolá"
+historic_status: "Commemorated by historical markers and diaries of the Portolá Expedition"
 ---
 
 ## Resumen

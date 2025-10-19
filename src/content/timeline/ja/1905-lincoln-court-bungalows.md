@@ -1,15 +1,15 @@
 ---
-title: "リンカーン・コート"
+title: "Lincoln Court"
 date: "1905-01-01"
 location: "315-323 Lincoln Street, Santa Cruz"
 latitude: 36.97195300711198
 longitude: -122.02868599192924
-description: "1905年から1920年の間に建設された、後に1990年にマイケル・オヘアンとアーティザンズによって修復された、クラフツマン様式のバンガロー・コートの俗的な建物。"
+description: "A vernacular Craftsman-era bungalow court built between 1905 and 1920, later restored by Michael O’Hearn & Artisans in 1990."
 address: "315-323 Lincoln Street, Santa Cruz, California"
 year_built: "c. 1905–1920"
-architectural_style: "クラフツマン様式バンガロー・コート"
+architectural_style: "Craftsman Bungalow Court"
 altered: true
-historic_status: "サンタクルーズ・ダウンタウン歴史地区の構成要素"
+historic_status: "Contributing property within the Santa Cruz Downtown Historic District"
 ---
 
 ## サンタクルーズのダウンタウンにある静かな庭園コート

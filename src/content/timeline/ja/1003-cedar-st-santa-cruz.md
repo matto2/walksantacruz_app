@@ -1,15 +1,15 @@
 ---
-title: "サンタクルス ホテル"
+title: "Santa Cruz Hotel"
 date: "1877-01-01"
-location: "ダウンタウン サンタクルス"
+location: "Downtown Santa Cruz"
 latitude: 36.97516519495824
 longitude: -122.02789000636452
-description: "1877年に建設され、当初は後期ヴィクトリア朝の商業様式/イタリア様式で設計されていた。1930年代に地階部分がストリームライン モダンの要素を取り入れた改修が行われた。"
+description: "Built in 1877, originally in Late Victorian Commercial/Italianate style; remodeled in the 1930s with Streamline Moderne elements on the ground floor."
 address: "1003 Cedar Street"
 year_built: 1877
-architectural_style: "イタリア様式"
+architectural_style: "Italianate"
 altered: true
-historic_status: "サンタクルス市歴史的建造物調査 (Vol. II, #2/13, APN 005-047-09)"
+historic_status: "City of Santa Cruz Historic Building Survey (Vol. II, #2/13, APN 005-047-09)"
 ---
 
 ## 概要

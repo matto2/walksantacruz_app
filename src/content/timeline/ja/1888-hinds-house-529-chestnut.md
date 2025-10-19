@@ -1,15 +1,15 @@
 ---
-title: "1888年のヒンズ邸 (529 Chestnut Street)"
+title: "1888 Hinds House (529 Chestnut Street)"
 date: "1888-01-01"
-location: "ダウンタウン・サンタクルーズ"
+location: "Downtown Santa Cruz"
 latitude: 36.9736
 longitude: -122.0311
-description: "1888年から1889年にかけてアルフレッド・J・ヒンズによって建てられたスティック・イーストレイク様式のヒンズ邸は、サンタクルーズのダウンタウンにある最初期の電化された家屋の1つで、ダベンポートの送電線から取り付けられた当時のままの照明器具が残されている。"
-address: "529 Chestnut Street, サンタクルーズ, カリフォルニア州"
+description: "Built 1888–89 by Alfred J. Hinds in Stick‑Eastlake style, the Hinds House is one of the first downtown homes in Santa Cruz to be wired for electricity, with a surviving fixture installed from Davenport power lines."
+address: "529 Chestnut Street, Santa Cruz, California"
 year_built: 1888
-architectural_style: "スティック・イーストレイク様式のヴィクトリア朝"
+architectural_style: "Stick‑Eastlake Victorian"
 altered: true
-historic_status: "全米歴史登録地(NRHP #83001241)に登録、サンタクルーズ市指定歴史的ランドマークに指定"
+historic_status: "Listed on the National Register of Historic Places (NRHP #83001241); designated Santa Cruz Historic Landmark"
 ---
 
 アルフレッド・J・ヒンズとその妻サラが**1889年**に新居に移り住んだとき、彼らはサンタクルーズで最も立派な邸宅の1つを建てただけでなく、未来に踏み出していたのである。この邸宅は、地域に60棟以上の建物を残した著名な地元の建築家ジョン・H・ウィリアムズによって設計された。

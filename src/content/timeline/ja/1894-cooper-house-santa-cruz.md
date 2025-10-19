@@ -4,12 +4,12 @@ date: "1894-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.97479
 longitude: -122.026
-description: "1894–1895年に建設されたサンタクルーズ郡裁判所(リチャードソン・ロマネスク様式)。1972年にマックス・ウォルデンによって再開発され、「Cooper House」として開業。1989年のロマプリエタ地震で大きな被害を受け、その後に取り壊された。"
+description: "Built 1894–1895 as the Santa Cruz County Courthouse (Richardsonian Romanesque). Redeveloped by Max Walden and reopened in 1972 as the Cooper House; demolished after the 1989 Loma Prieta earthquake."
 address: "110 Cooper Street"
 year_built: 1894
-architectural_style: "リチャードソン・ロマネスク様式"
+architectural_style: "Richardsonian Romanesque"
 altered: true
-historic_status: "かつてのサンタクルーズ郡裁判所#5、後のCooper House、現在はAbbott Square/MAHの一部"
+historic_status: "Former Santa Cruz County Courthouse #5; later Cooper House; site now part of Abbott Square/MAH"
 ---
 
 ## 概要

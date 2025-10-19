@@ -1,15 +1,15 @@
 ---
-title: "Santa Cruz City Hall"
+title: "Santa Cruz City Hall"
 date: "1937-09-15"
-location: "809 Center Street, Santa Cruz"
+location: "809 Center Street, Santa Cruz"
 latitude: 36.974407027700224
 longitude: -122.02962423984825
-description: "Completado en 1937 en el estilo Monterey‑Colonial Revival como un proyecto de la Administración de Obras Públicas, el Ayuntamiento de Santa Cruz marcó la madurez cívica de la ciudad y el compromiso con la arquitectura pública."
-address: "809 Center Street, Santa Cruz, California 95060"
+description: "Completed in 1937 in the Monterey‑Colonial Revival style as a Public Works Administration project, Santa Cruz City Hall marked the city’s civic maturation and commitment to public architecture."
+address: "809 Center Street, Santa Cruz, California 95060"
 year_built: 1937
 architectural_style: "Monterey‑Colonial Revival"
 altered: true
-historic_status: "Incluido en el sitio Living New Deal; Monumento de la ciudad de Santa Cruz"
+historic_status: "Listed in Living New Deal site; City of Santa Cruz landmark"
 ---
 
 ## Un Hito Cívico para una Ciudad en Crecimiento

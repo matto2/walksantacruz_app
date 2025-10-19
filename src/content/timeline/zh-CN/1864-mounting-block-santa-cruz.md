@@ -1,15 +1,15 @@
 ---
-title: "1864年的马镫台 (123 Green Street)"
+title: "1864 Mounting Block (123 Green Street)"
 date: "1864-01-01"
-location: "Mission Hill, Santa Cruz"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.976346840997124
 longitude: -122.030822
-description: "这可能是圣克鲁斯最后一个幸存的混凝土马镫台,它唤起了汽车改变日常生活之前马车时代的回忆。"
-address: "123 Green Street, Santa Cruz, California"
+description: "Likely the last surviving concrete mounting block in Santa Cruz, this block recalls the horse‑and‑carriage era before automobiles transformed daily life."
+address: "123 Green Street, Santa Cruz, California"
 year_built: 1864
-architectural_style: "混凝土实用主义"
+architectural_style: "Concrete utilitarian"
 altered: false
-historic_status: "当地景点;汽车时代前的遗迹"
+historic_status: "Local point of interest; remnant of pre‑automobile era"
 ---
 
 ## 回到过去

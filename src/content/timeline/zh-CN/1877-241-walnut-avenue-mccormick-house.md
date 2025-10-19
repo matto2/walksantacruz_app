@@ -4,12 +4,12 @@ date: "1877-12-25"
 location: "241 Walnut Avenue, Santa Cruz"
 latitude: 36.9726
 longitude: -122.03009030930666
-description: "Built in 1877 as a Christmas-day gift from Lewis McCormick to his wife Maggie, this Victorian cottage stands in Santa Cruz's earliest downtown residential district and remains a testament to the city's architectural preservation efforts."
+description: "Built in 1877 as a Christmas-day gift from Lewis McCormick to his wife Maggie, this Victorian cottage stands in Santa Cruz’s earliest downtown residential district and remains a testament to the city’s architectural preservation efforts."
 address: "241 Walnut Avenue, Santa Cruz, California 95060"
 year_built: 1877
 architectural_style: "Victorian Cottage (Carpenter Gothic / Queen Anne influences)"
 altered: true
-historic_status: "Part of the Santa Cruz Downtown Historic District – the city's first downtown residential neighborhood"
+historic_status: "Part of the Santa Cruz Downtown Historic District – the city’s first downtown residential neighborhood"
 ---
 
 ## 圣诞礼物和早期街区根源

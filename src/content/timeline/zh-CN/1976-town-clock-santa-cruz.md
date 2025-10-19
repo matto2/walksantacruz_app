@@ -1,15 +1,15 @@
 ---
-title: "Santa Cruz 镇钟"
+title: "Santa Cruz Town Clock"
 date: "1976-07-04"
 location: "Downtown Santa Cruz"
 latitude: 36.977156
 longitude: -122.026925
-description: "作为建国200周年纪念项目而于1976年7月4日落成的镇钟,重复使用了IOOF大楼上世纪初期的钟机械;它建立在1967年的莫里斯纪念喷泉之上,后来又增添了一块纪念1989年洛马普里塔大地震遇难者的牌匾。"
+description: "Dedicated on July 4, 1976 as a Bicentennial project, the Town Clock reuses the IOOF building’s early-1900 clockworks; it was erected over the 1967 Morris Memorial Fountain and later gained an earthquake memorial plaque."
 address: "N Pacific Ave & Water St, Santa Cruz, California"
 year_built: 1976
-architectural_style: "西班牙殖民地复兴式"
+architectural_style: "Spanish Colonial Revival"
 altered: true
-historic_status: "Santa Cruz市指定历史地标 (1979年10月23日)"
+historic_status: "City of Santa Cruz Landmark (designated Oct 23, 1979)"
 ---
 
 如果你站在**镇钟**下,你就能听到上世纪初期的心跳声从1976年的塔楼里传出。

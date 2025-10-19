@@ -4,7 +4,7 @@ date: "1883-01-01"
 location: "Squid Row, Santa Cruz"
 latitude: 36.97610078654613
 longitude: -122.0293021500921
-description: "Establecida en 1883, Enterprise Iron Works fue una piedra angular de la industria de Santa Cruz. La fundición produjo trabajos metálicos esenciales para los molinos locales, las conserveras y las industrias marítimas, y más tarde se convirtió en un hito restaurado por Michael Leeds."
+description: "Established in 1883, Enterprise Iron Works was a cornerstone of Santa Cruz industry. The foundry produced essential metalwork for local mills, canneries, and maritime industries and later became a landmark restored by Michael Leeds."
 address: "Near 325 Squid Row, Santa Cruz, California"
 year_built: 1883
 architectural_style: "Industrial Vernacular"

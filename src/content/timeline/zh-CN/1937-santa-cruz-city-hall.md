@@ -1,15 +1,15 @@
 ---
-title: "圣克鲁斯市政厅"
+title: "Santa Cruz City Hall"
 date: "1937-09-15"
-location: "809 Center Street, Santa Cruz"
+location: "809 Center Street, Santa Cruz"
 latitude: 36.974407027700224
 longitude: -122.02962423984825
-description: "1937年完工的蒙特雷-殖民地复兴风格建筑,作为公共工程管理局项目的一部分,圣克鲁斯市政厅标志着该市政府建筑的成熟和对公共建筑的重视。"
-address: "809 Center Street, Santa Cruz, California 95060"
+description: "Completed in 1937 in the Monterey‑Colonial Revival style as a Public Works Administration project, Santa Cruz City Hall marked the city’s civic maturation and commitment to public architecture."
+address: "809 Center Street, Santa Cruz, California 95060"
 year_built: 1937
-architectural_style: "蒙特雷-殖民地复兴"
+architectural_style: "Monterey‑Colonial Revival"
 altered: true
-historic_status: "列入"生活新政"网站;圣克鲁斯市地标"
+historic_status: "Listed in Living New Deal site; City of Santa Cruz landmark"
 ---
 
 ## 一座为不断发展城市而建的地标性建筑

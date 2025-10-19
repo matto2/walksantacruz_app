@@ -4,12 +4,12 @@ date: "1913-01-01"
 location: "418 Cedar Street, Santa Cruz"
 latitude: 36.9707
 longitude: -122.0264
-description: "Originalmente construido alrededor de 1913 y utilizado como consultorio del Dr. Miller, más tarde fue el hogar de Caffe Pergolesi, el icónico café de Santa Cruz donde trabajó The Devil Makes Three."
+description: "Originally built c.1913 and used as Dr. Miller’s dentist office, later the home of Caffe Pergolesi — the iconic Santa Cruz coffee-house where The Devil Makes Three once worked."
 address: "418 Cedar Street, Santa Cruz, California 95060"
 year_built: 1913
-architectural_style: "Comercial/residencial victoriano"
+architectural_style: "Victorian commercial/residential"
 altered: true
-historic_status: "Localmente significativo por su historia cultural y el patrimonio del centro de Santa Cruz"
+historic_status: "Locally significant for cultural history and downtown Santa Cruz heritage"
 ---
 
 ## De consultorio dental a centro de cafeterías

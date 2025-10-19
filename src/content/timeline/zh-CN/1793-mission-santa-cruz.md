@@ -1,15 +1,15 @@
 ---
-title: "圣克鲁斯使命"
+title: "Santa Cruz Mission"
 date: "1793-01-01"
-location: "圣克鲁斯的使命山"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.97877891060964
 longitude: -122.02943636519264
-description: "圣克鲁斯使命建于1793年,使用了土坯建造,是加利福尼亚最小的使命之一。它遭到了自然灾害的破坏,后来重建在使命山上,现已成为圣克鲁斯使命州立历史公园的一部分。"
+description: "Built in 1793 using adobe, the Santa Cruz Mission was one of the smallest California missions. It was destroyed by natural disasters and rebuilt on Mission Hill, now preserved as Santa Cruz Mission State Historic Park."
 address: "210 High St"
 year_built: 1793
-architectural_style: "土坯"
+architectural_style: "Adobe"
 altered: true
-historic_status: "加利福尼亚历史地标第342号;属于圣克鲁斯使命州立历史公园"
+historic_status: "California Historical Landmark No. 342; part of the Santa Cruz Mission State Historic Park"
 ---
 
 ## 概述

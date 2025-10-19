@@ -1,15 +1,15 @@
 ---
-title: "ポルトラ遠征隊のキャンプサイト (1769年)"
+title: "Portolá Expedition Campsite (1769)"
 date: "1769-10-17"
-location: "サンタクルスのロアー・サンロレンソ川"
+location: "Lower San Lorenzo River, Santa Cruz"
 latitude: 36.97304077157908
 longitude: -122.02301632297392
-description: "1769年10月17日、ポルトラ遠征隊はサンロレンソ川を渡り、近くにキャンプを設営しました。これがサンタクルスに記録された最初の欧州人の訪問となりました。"
-address: "サンタクルス、カリフォルニア州のソーケル・アベニュー橋付近"
+description: "On October 17, 1769, the Portolá Expedition forded the San Lorenzo River and camped nearby, marking the first recorded European presence in what is now Santa Cruz."
+address: "Approx. near Soquel Avenue Bridge, Santa Cruz, California"
 year_built: 1769
-architectural_style: "なし (キャンプサイト / 探検の記念碑)"
+architectural_style: "None (Campsite / Exploration Landmark)"
 altered: false
-historic_status: "ポルトラ遠征隊の日記と歴史的なマーカーによって記念されている"
+historic_status: "Commemorated by historical markers and diaries of the Portolá Expedition"
 ---
 
 ## 概要

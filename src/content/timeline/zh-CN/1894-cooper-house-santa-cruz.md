@@ -1,15 +1,15 @@
 ---
-title: "库珀大厦"
+title: "Cooper House"
 date: "1894-01-01"
-location: "圣克鲁斯市中心"
+location: "Downtown Santa Cruz"
 latitude: 36.97479
 longitude: -122.026
-description: "1894–1895年建造,原为圣克鲁斯县法院(理查德逊罗马式)。1972年由马克斯·沃尔登重新开发,改名为库珀大厦;1989年洛马普里塔大地震后被拆除。"
+description: "Built 1894–1895 as the Santa Cruz County Courthouse (Richardsonian Romanesque). Redeveloped by Max Walden and reopened in 1972 as the Cooper House; demolished after the 1989 Loma Prieta earthquake."
 address: "110 Cooper Street"
 year_built: 1894
-architectural_style: "理查德逊罗马式"
+architectural_style: "Richardsonian Romanesque"
 altered: true
-historic_status: "原圣克鲁斯县法院#5;后为库珀大厦;现场地为阿博特广场/MAH的一部分"
+historic_status: "Former Santa Cruz County Courthouse #5; later Cooper House; site now part of Abbott Square/MAH"
 ---
 
 ## 概述

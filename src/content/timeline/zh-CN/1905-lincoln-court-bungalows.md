@@ -1,15 +1,15 @@
 ---
-title: "林肯庭院"
+title: "Lincoln Court"
 date: "1905-01-01"
 location: "315-323 Lincoln Street, Santa Cruz"
 latitude: 36.97195300711198
 longitude: -122.02868599192924
-description: "一座于1905年至1920年间建造的乡土工艺风格平房庭院,后于1990年由Michael O'Hearn & Artisans进行修复。"
+description: "A vernacular Craftsman-era bungalow court built between 1905 and 1920, later restored by Michael O’Hearn & Artisans in 1990."
 address: "315-323 Lincoln Street, Santa Cruz, California"
-year_built: "约1905–1920"
-architectural_style: "工艺风格平房庭院"
+year_built: "c. 1905–1920"
+architectural_style: "Craftsman Bungalow Court"
 altered: true
-historic_status: "位于圣克鲁斯市中心历史区的贡献性建筑"
+historic_status: "Contributing property within the Santa Cruz Downtown Historic District"
 ---
 
 ## 圣克鲁斯市中心的宁静庭院

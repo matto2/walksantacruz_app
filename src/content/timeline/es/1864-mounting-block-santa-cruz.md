@@ -1,11 +1,11 @@
 ---
 title: "1864 Mounting Block (123 Green Street)"
 date: "1864-01-01"
-location: "Mission Hill, Santa Cruz"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.976346840997124
 longitude: -122.030822
-description: "Likely the last surviving concrete mounting block in Santa Cruz, this block recalls the horse‑and‑carriage era before automobiles transformed daily life."
-address: "123 Green Street, Santa Cruz, California"
+description: "Likely the last surviving concrete mounting block in Santa Cruz, this block recalls the horse‑and‑carriage era before automobiles transformed daily life."
+address: "123 Green Street, Santa Cruz, California"
 year_built: 1864
 architectural_style: "Concrete utilitarian"
 altered: false

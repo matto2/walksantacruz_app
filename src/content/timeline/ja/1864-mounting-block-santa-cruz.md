@@ -1,15 +1,15 @@
 ---
-title: "1864年の乗り降りブロック (123 Green Street)"
+title: "1864 Mounting Block (123 Green Street)"
 date: "1864-01-01"
-location: "Mission Hill, Santa Cruz"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.976346840997124
 longitude: -122.030822
-description: "サンタクルーズで最後に残る具体的な乗り降りブロックと考えられ、自動車が日常生活を変革する前の馬車時代を思い起こさせる。"
-address: "123 Green Street, Santa Cruz, California"
+description: "Likely the last surviving concrete mounting block in Santa Cruz, this block recalls the horse‑and‑carriage era before automobiles transformed daily life."
+address: "123 Green Street, Santa Cruz, California"
 year_built: 1864
-architectural_style: "コンクリートの実用的なスタイル"
+architectural_style: "Concrete utilitarian"
 altered: false
-historic_status: "地域の名所; 自動車以前の時代の遺物"
+historic_status: "Local point of interest; remnant of pre‑automobile era"
 ---
 
 ## 時代を遡る

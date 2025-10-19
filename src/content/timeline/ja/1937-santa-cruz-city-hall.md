@@ -1,15 +1,15 @@
 ---
-title: "サンタクルス市役所"
+title: "Santa Cruz City Hall"
 date: "1937-09-15"
-location: "809 Center Street, Santa Cruz"
+location: "809 Center Street, Santa Cruz"
 latitude: 36.974407027700224
 longitude: -122.02962423984825
-description: "1937年に完成したモンテレー‑コロニアル・リバイバル様式の公共事業管理局プロジェクトとして、サンタクルス市役所は市の行政的成熟と公共建築への取り組みを示すものでした。"
-address: "809 Center Street, Santa Cruz, California 95060"
+description: "Completed in 1937 in the Monterey‑Colonial Revival style as a Public Works Administration project, Santa Cruz City Hall marked the city’s civic maturation and commitment to public architecture."
+address: "809 Center Street, Santa Cruz, California 95060"
 year_built: 1937
-architectural_style: "モンテレー‑コロニアル・リバイバル"
+architectural_style: "Monterey‑Colonial Revival"
 altered: true
-historic_status: "Living New Deal サイトに掲載; サンタクルス市の歴史的ランドマーク"
+historic_status: "Listed in Living New Deal site; City of Santa Cruz landmark"
 ---
 
 ## 成長する街の象徴的な市庁舎

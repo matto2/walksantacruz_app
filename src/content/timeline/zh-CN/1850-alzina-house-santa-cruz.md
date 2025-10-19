@@ -1,15 +1,15 @@
 ---
-title: "Alzina House (109 Sylvar Street)"
+title: "Alzina House (109 Sylvar Street)"
 date: "1850-01-01"
-location: "Mission Hill, Santa Cruz"
+location: "Mission Hill, Santa Cruz"
 latitude: 36.97768796768872
 longitude: -122.03053815030775
-description: "Built circa 1850 by Francisco Alzina, the Alzina House is the oldest known wood‑frame dwelling in Santa Cruz County and still retains its original form."
-address: "109 Sylvar Street, Santa Cruz, California"
+description: "Built circa 1850 by Francisco Alzina, the Alzina House is the oldest known wood‑frame dwelling in Santa Cruz County and still retains its original form."
+address: "109 Sylvar Street, Santa Cruz, California"
 year_built: 1850
 architectural_style: "Salt‑box wood‑frame"
 altered: true
-historic_status: "City of Santa Cruz Landmark; oldest frame house in Santa Cruz County"
+historic_status: "City of Santa Cruz Landmark; oldest frame house in Santa Cruz County"
 ---
 
 ## 从明尼卡到米申山

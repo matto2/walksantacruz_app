@@ -4,7 +4,7 @@ date: "1905-01-01"
 location: "315-323 Lincoln Street, Santa Cruz"
 latitude: 36.97195300711198
 longitude: -122.02868599192924
-description: "A vernacular Craftsman-era bungalow court built between 1905 and 1920, later restored by Michael O'Hearn & Artisans in 1990."
+description: "A vernacular Craftsman-era bungalow court built between 1905 and 1920, later restored by Michael O’Hearn & Artisans in 1990."
 address: "315-323 Lincoln Street, Santa Cruz, California"
 year_built: "c. 1905–1920"
 architectural_style: "Craftsman Bungalow Court"

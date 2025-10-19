@@ -4,12 +4,12 @@ date: "1877-12-25"
 location: "241 Walnut Avenue, Santa Cruz"
 latitude: 36.9726
 longitude: -122.03009030930666
-description: "1877年にルイス・マコーミック氏がクリスマスの贈り物としてその妻マギーに贈った、この ビクトリア朝様式のコテージは、サンタクルーズ市の最も古い市街地の住宅地区に立っており、同市の建築保存の取り組みの証しとなっている。"
+description: "Built in 1877 as a Christmas-day gift from Lewis McCormick to his wife Maggie, this Victorian cottage stands in Santa Cruz’s earliest downtown residential district and remains a testament to the city’s architectural preservation efforts."
 address: "241 Walnut Avenue, Santa Cruz, California 95060"
 year_built: 1877
-architectural_style: "ビクトリア朝様式コテージ（カーペンター・ゴシック/クイーン・アン様式の影響）"
+architectural_style: "Victorian Cottage (Carpenter Gothic / Queen Anne influences)"
 altered: true
-historic_status: "サンタクルーズ市ダウンタウン歴史地区の一部 - 同市最初の市街地の住宅地区"
+historic_status: "Part of the Santa Cruz Downtown Historic District – the city’s first downtown residential neighborhood"
 ---
 
 ## クリスマスの贈り物と初期の地域コミュニティの根源

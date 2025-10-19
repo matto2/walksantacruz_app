@@ -1,15 +1,15 @@
 ---
-title: "サンタクルーズ・ミッション"
+title: "Santa Cruz Mission"
 date: "1793-01-01"
 location: "Mission Hill, Santa Cruz"
 latitude: 36.97877891060964
 longitude: -122.02943636519264
-description: "1793年にアドビ造りで建設されたサンタクルーズ・ミッションは、カリフォルニアのミッションの中でも最も小さいものの1つでした。自然災害により破壊され、ミッション・ヒルに再建されました。現在はサンタクルーズ・ミッション州立歴史公園として保存されています。"
+description: "Built in 1793 using adobe, the Santa Cruz Mission was one of the smallest California missions. It was destroyed by natural disasters and rebuilt on Mission Hill, now preserved as Santa Cruz Mission State Historic Park."
 address: "210 High St"
 year_built: 1793
-architectural_style: "アドビ"
+architectural_style: "Adobe"
 altered: true
-historic_status: "カリフォルニア歴史的ランドマーク第342号、サンタクルーズ・ミッション州立歴史公園の一部"
+historic_status: "California Historical Landmark No. 342; part of the Santa Cruz Mission State Historic Park"
 ---
 
 ## 概要

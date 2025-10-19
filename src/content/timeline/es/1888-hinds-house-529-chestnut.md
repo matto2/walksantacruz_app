@@ -4,12 +4,12 @@ date: "1888-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.9736
 longitude: -122.0311
-description: "Construido en 1888-89 por Alfred J. Hinds en el estilo Stick‑Eastlake, la Casa Hinds es una de las primeras casas del centro de Santa Cruz que se cablearon para electricidad, con un accesorio sobreviviente instalado desde las líneas de energía de Davenport."
+description: "Built 1888–89 by Alfred J. Hinds in Stick‑Eastlake style, the Hinds House is one of the first downtown homes in Santa Cruz to be wired for electricity, with a surviving fixture installed from Davenport power lines."
 address: "529 Chestnut Street, Santa Cruz, California"
 year_built: 1888
-architectural_style: "Victoriano Stick‑Eastlake"
+architectural_style: "Stick‑Eastlake Victorian"
 altered: true
-historic_status: "Incluido en el Registro Nacional de Lugares Históricos (NRHP #83001241); designado Hito Histórico de Santa Cruz"
+historic_status: "Listed on the National Register of Historic Places (NRHP #83001241); designated Santa Cruz Historic Landmark"
 ---
 
 Cuando Alfred J. Hinds y su esposa Sarah se mudaron a su nueva casa en **1889**, no solo estaban construyendo una de las residencias más grandiosas de Santa Cruz, sino que también se estaban adentrando en el futuro. La casa fue diseñada por **John H. Williams**, un prolífico arquitecto local que dejó su marca en aproximadamente sesenta edificios en el área.
