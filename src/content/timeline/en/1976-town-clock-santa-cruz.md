@@ -102,57 +102,39 @@ The Hihn family dominated early Santa Cruz commerce:
 
 ---
 
-## Town Clock History (1873-Present)
+## Town Clock History (1900-Present)
 
-> **Important Note:** The clock tower did not arrive at the Lower Plaza until 1976. For over a century, it stood elsewhere on Pacific Avenue, making it a beloved downtown landmark before being relocated to its current home.
+> **Note:** The clock tower was located on Pacific Avenue until 1976, when it was relocated to the Lower Plaza.
 
-### The Original Location: Pacific Avenue (1873-1964)
+### Original Location: Pacific Avenue (1900-1964)
 
-**Late 1800s**: The **Odd Fellows (IOOF) Lodge** was built on **Pacific Avenue between Cooper and Church Streets**, near the courthouse—in the heart of downtown, but several blocks from the Lower Plaza.
+**1900**: Current clockworks installed, dated January 22, 1900, atop the Odd Fellows (IOOF) Lodge on Pacific Avenue between Cooper and Church Streets.
 
-The Odd Fellows is a men's social organization similar to the Elks or Masons, and their lodge building became a prominent downtown landmark.
+**1929**: Bell chimes shut off due to hotel manager complaints.
 
-**1873**: A clock tower was added as an ornament to the Odd Fellows Lodge, creating Santa Cruz's first public town clock. The tower crowned the building above Pacific Avenue, visible throughout downtown.
+**1964**: Clock and tower removed from the Odd Fellows building during modernization and sold to the city for $1.01.
 
-**1894**: The clock tower **survived the great fire** that devastated much of downtown.
+### Storage & Relocation (1970s-1976)
 
-**1896**: As a prominent downtown landmark, the clock tower was chosen as the site of Santa Cruz's **first public electric lighting installation**—600 incandescent lights that transformed nighttime downtown and announced the arrival of the modern age.
+**1970s**: Clock mechanism and tower stored for a decade.
 
-**1899**: The devastating fire finally caught up—the IOOF building burned, but was **rebuilt with a new clock tower**.
+**1976**: New brick tower built at Lower Plaza (Front & Pacific) to house the historic mechanism, placed over the 1967 Morris Memorial Fountain. Funded by blue brick sales to neighbors and organizations.
 
-**1900**: The current clockworks were installed, dated **January 22, 1900**—the mechanical heart still beating today.
+**July 4, 1976**: Town Clock dedicated at its new Lower Plaza location.
 
-### The Silent Years (1929-1964)
+### Modern Era (1977-Present)
 
-**1929**: The bell chimes were **shut off due to hotel manager complaints**—a rare defeat for civic tradition over commerce.
+**1977**: First demonstration at the Town Clock (B-1 bomber protest).
 
-**1964**: During building modernization on Pacific Avenue, the clock and tower were **removed from the Odd Fellows building and sold to the city for $1.01**. Someone saw its historical value, even if they didn't know what to do with it yet.
+**October 23, 1979**: Designated City of Santa Cruz Landmark.
 
-### Storage & Relocation to Lower Plaza (1970s-1976)
+**October 17, 1989, 5:04 PM**: Clock stopped during the Loma Prieta earthquake.
 
-**1970s**: The clock mechanism and tower **languished in storage for a decade**, seemingly forgotten—a beloved landmark in limbo.
+**Early 1990s**: Plaque added honoring Santa Cruz lives lost in the 1989 earthquake.
 
-**1976**: America's **Bicentennial** awakened civic pride. The city decided to give the clock a new home at **the Lower Plaza (Front & Pacific)**, building a new brick tower to house the historic mechanism.
+**1995**: Peace sculpture "Collateral Damage: A Reality of War" installed nearby.
 
-The new tower was **erected at the Lower Plaza's current location**—placed directly over the **1967 Morris Memorial Fountain**, uniting two memorials. Neighbors and organizations bought **blue bricks** to fund construction—their names still embedded in the plaza at your feet.
-
-This was the clock's **first time at the Lower Plaza**. For over a century it had watched over Pacific Avenue blocks away; now it would anchor a different historic intersection.
-
-**July 4, 1976**: The Town Clock was **dedicated at its new Lower Plaza location**, returning its familiar chimes to downtown Santa Cruz in a new home.
-
-### Modern Civic Landmark (1977-Present)
-
-**1977**: The **first demonstration at the Town Clock** (B-1 bomber protest) established it as Santa Cruz's premier gathering place for civic expression.
-
-**October 23, 1979**: Designated **City of Santa Cruz Landmark**
-
-**October 17, 1989, 5:04 PM**: The clock **stopped during the Loma Prieta earthquake**, marking the exact moment disaster struck—a visual memorial frozen in time.
-
-**Early 1990s**: A plaque was added **honoring Santa Cruz lives lost in the 1989 earthquake**, deepening the site's memorial role.
-
-**1995**: The peace sculpture **"Collateral Damage: A Reality of War"** was installed nearby, making the plaza a place to remember, reflect, and speak out.
-
-**Present**: The Town Clock remains the **gathering place for protests, celebrations, farmers' markets, and mourning**—the town square Santa Cruz never formally planned but organically created.
+**Present**: Gathering place for protests, celebrations, and mourning.
 
 ---
 
@@ -184,11 +166,10 @@ The Lower Plaza truly is the **birthplace of downtown Santa Cruz**, with an unbr
 2. **1848**: First downtown business—Elihu Anthony's foundry anchors commercial development
 3. **1850**: First post office—Santa Cruz connects to the wider world
 4. **1860**: County Courthouse—center of law and government
-5. **1900**: Town Clock installed—civic timekeeper and gathering point
-6. **1976**: Clock restored—Bicentennial symbol of community resilience
-7. **1989**: Earthquake memorial—place of collective grief and recovery
-8. **Present**: Farmers' market, protests, celebrations—living town square
+5. **1976**: Town Clock relocated—Bicentennial symbol of community resilience
+6. **1989**: Earthquake memorial—place of collective grief and recovery
+7. **Present**: Protests, celebrations, and mourning—living town square
 
-The Town Clock doesn't just tell time—it **collects time**, measuring the minutes while bearing witness to centuries. Every hour that chimes rings past and present together, from mission bells to foundry hammers to earthquake sirens to farmers' market laughter.
+The Town Clock doesn't just tell time—it **collects time**, measuring the minutes while bearing witness to centuries. Every hour that chimes rings past and present together, from mission bells to foundry hammers to earthquake sirens to civic gatherings.
 
 Stand here long enough, and you're standing at the **crossroads of Santa Cruz history**.
