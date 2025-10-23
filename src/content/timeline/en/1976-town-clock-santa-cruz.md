@@ -104,33 +104,41 @@ The Hihn family dominated early Santa Cruz commerce:
 
 ## Town Clock History (1873-Present)
 
-### The First Clock (1873-1899)
+> **Important Note:** The clock tower did not arrive at the Lower Plaza until 1976. For over a century, it stood elsewhere on Pacific Avenue, making it a beloved downtown landmark before being relocated to its current home.
 
-**1873**: The first town clock was built as part of the **Odd Fellows (IOOF) building on Pacific Avenue** (near Church Street), becoming a beloved civic fixture.
+### The Original Location: Pacific Avenue (1873-1964)
 
-**1894**: The first clock **survived the great fire** that devastated much of downtown.
+**Late 1800s**: The **Odd Fellows (IOOF) Lodge** was built on **Pacific Avenue between Cooper and Church Streets**, near the courthouse—in the heart of downtown, but several blocks from the Lower Plaza.
 
-**1896**: The site became home to Santa Cruz's **first public electric lighting installation**—600 incandescent lights that transformed nighttime downtown.
+The Odd Fellows is a men's social organization similar to the Elks or Masons, and their lodge building became a prominent downtown landmark.
 
-**1899**: The devastating fire that the first clock escaped finally caught up—the IOOF building burned, but was **rebuilt with the current clock tower**.
+**1873**: A clock tower was added as an ornament to the Odd Fellows Lodge, creating Santa Cruz's first public town clock. The tower crowned the building above Pacific Avenue, visible throughout downtown.
 
-**1900**: Current clockworks dated **January 22, 1900**—the mechanical heart still beating today.
+**1894**: The clock tower **survived the great fire** that devastated much of downtown.
+
+**1896**: As a prominent downtown landmark, the clock tower was chosen as the site of Santa Cruz's **first public electric lighting installation**—600 incandescent lights that transformed nighttime downtown and announced the arrival of the modern age.
+
+**1899**: The devastating fire finally caught up—the IOOF building burned, but was **rebuilt with a new clock tower**.
+
+**1900**: The current clockworks were installed, dated **January 22, 1900**—the mechanical heart still beating today.
 
 ### The Silent Years (1929-1964)
 
 **1929**: The bell chimes were **shut off due to hotel manager complaints**—a rare defeat for civic tradition over commerce.
 
-**1964**: During building modernization, the clock was **removed and sold to the city for $1.01**. Someone saw its historical value, even if they didn't know what to do with it yet.
+**1964**: During building modernization on Pacific Avenue, the clock and tower were **removed from the Odd Fellows building and sold to the city for $1.01**. Someone saw its historical value, even if they didn't know what to do with it yet.
 
-### Storage & Resurrection (1970s-1976)
+### Storage & Relocation to Lower Plaza (1970s-1976)
 
-**1970s**: The clock mechanism **languished in storage for a decade**, seemingly forgotten.
+**1970s**: The clock mechanism and tower **languished in storage for a decade**, seemingly forgotten—a beloved landmark in limbo.
 
-**1976**: America's **Bicentennial** awakened civic pride. The clock was **restored and erected at the current location** as a Bicentennial project—placed directly over the **1967 Morris Memorial Fountain**, uniting two memorials.
+**1976**: America's **Bicentennial** awakened civic pride. The city decided to give the clock a new home at **the Lower Plaza (Front & Pacific)**, building a new brick tower to house the historic mechanism.
 
-Neighbors and organizations bought **blue bricks** to fund the tower—their names still embedded in the plaza at your feet.
+The new tower was **erected at the Lower Plaza's current location**—placed directly over the **1967 Morris Memorial Fountain**, uniting two memorials. Neighbors and organizations bought **blue bricks** to fund construction—their names still embedded in the plaza at your feet.
 
-**July 4, 1976**: The Town Clock was **dedicated at its new location**, returning its familiar chimes to downtown Santa Cruz.
+This was the clock's **first time at the Lower Plaza**. For over a century it had watched over Pacific Avenue blocks away; now it would anchor a different historic intersection.
+
+**July 4, 1976**: The Town Clock was **dedicated at its new Lower Plaza location**, returning its familiar chimes to downtown Santa Cruz in a new home.
 
 ### Modern Civic Landmark (1977-Present)
 
