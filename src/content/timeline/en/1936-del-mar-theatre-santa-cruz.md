@@ -16,7 +16,7 @@ historic_status: "City of Santa Cruz Historic Building; restored 2002"
 
 The **Del Mar Theatre**, located on **Pacific Avenue**, opened on **August 14, 1936**, as both a **vaudeville stage and movie palace**. It served as Santa Cruz’s leading entertainment venue, featuring live variety shows, musical acts, and feature films during Hollywood’s Golden Age.
 
-Designed in the **Art Deco** style by renowned theater architect **S. Charles Lee**, the Del Mar’s illuminated tower, geometric façade, and terrazzo lobby set a new modern standard for downtown Santa Cruz. Inside, the auditorium seated over **1,500 patrons** and featured gold leaf accents, mirrored walls, and elaborate plaster ornamentation.
+Designed by architect **J. Lloyd Conrich** in the **Zig-Zag Moderne** (Art Deco) style, with interior decoration by **William Chevalis**, the Del Mar's illuminated tower, geometric façade, and terrazzo lobby set a new modern standard for downtown Santa Cruz. Inside, the auditorium seated over **1,500 patrons** and featured gold leaf accents, mirrored walls, and elaborate plaster ornamentation.
 
 ## Vaudeville and Early Music
 
