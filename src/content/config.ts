@@ -25,6 +25,8 @@ const timelineSchema = z.object({
   year_built: z.union([z.number(), z.string()]).optional(), // Allow both number and string (e.g., "c. 1905-1920")
   altered: z.boolean().optional(),
   historic_status: z.string().optional(),
+  image: z.string().optional(), // Path to image file in public/images/
+  image_credit: z.string().optional(), // Attribution for the image
 });
 
 const peopleSchema = z.object({

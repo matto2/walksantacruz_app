@@ -10,6 +10,8 @@ year_built: 1769
 architectural_style: "None (Campsite / Exploration Landmark)"
 altered: false
 historic_status: "Commemorated by historical markers and diaries of the Portolá Expedition"
+image: "portola-expedition.jpg"
+image_credit: "Artists rendition from the Irvine Standard"
 ---
 
 ## Overview

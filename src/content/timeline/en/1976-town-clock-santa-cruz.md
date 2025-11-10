@@ -10,6 +10,8 @@ year_built: 1791
 architectural_style: "Historic District"
 altered: true
 historic_status: "Town Clock: City of Santa Cruz Landmark (designated Oct 23, 1979); Site of original Mission Santa Cruz (1791)"
+image: "lower-plaza.jpg"
+image_credit: "Lower Plaza circa 1894 / UCSC Digital Collections"
 ---
 
 ## Location Names

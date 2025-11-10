@@ -1,6 +1,22 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getStyleColor } from "../content/config";
+import { Image, getImage } from "astro:assets";
+
+// Load all images from src/images
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/*.{jpeg,jpg,png,gif,webp}');
+
+// Helper to get image path
+async function getImageSrc(imageName: string | undefined) {
+  if (!imageName) return null;
+  const imagePath = `/src/images/${imageName}`;
+  const imageModule = images[imagePath];
+  if (imageModule) {
+    const image = await imageModule();
+    return image.default;
+  }
+  return null;
+}
 
 // For static generation, load only English entries by default
 // Language switching will trigger a page reload
@@ -22,11 +38,21 @@ const sortedEntries = timelineEntries.sort(
   }
 );
 
-// Render markdown content for each entry
+// Render markdown content for each entry and load images
 const entriesWithContent = await Promise.all(
   sortedEntries.map(async (entry) => {
     const { Content } = await entry.render();
-    return { entry, Content };
+    // Only load image if entry has one defined
+    const imageSrc = entry.data.image ? await getImageSrc(entry.data.image) : null;
+
+    // Generate larger version for modal (848px wide max)
+    let modalImageSrc = null;
+    if (imageSrc) {
+      const largeImage = await getImage({ src: imageSrc, width: 848, format: 'webp' });
+      modalImageSrc = largeImage.src;
+    }
+
+    return { entry, Content, imageSrc, modalImageSrc };
   })
 );
 
@@ -88,6 +114,7 @@ function parseYear(dateString: string): number {
   <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
     <thead class="text-white" style="background-color: rgb(226, 111, 4);">
       <tr>
+        <th class="px-6 py-3 text-left text-sm font-semibold"></th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Date</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Title</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Location</th>
@@ -95,8 +122,32 @@ function parseYear(dateString: string): number {
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
-      {entriesWithContent.map(({ entry }, index) => (
+      {entriesWithContent.map(({ entry, imageSrc }, index) => (
           <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"} data-lang={entry.id.split('/')[0]}>
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                {imageSrc ? (
+                  <button
+                    class="view-details-btn hover:opacity-80 transition-opacity"
+                    data-entry-id={`entry-${index}`}
+                    title="Click to view full details"
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={entry.data.title}
+                      width={192}
+                      height={192}
+                      class="w-16 h-16 object-cover rounded"
+                      quality={90}
+                    />
+                  </button>
+                ) : (
+                  <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                    <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                )}
+              </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 {parseYear(entry.data.date)}
               </td>
@@ -165,7 +216,7 @@ function parseYear(dateString: string): number {
 )}
 
 <!-- Hidden content for modal (each entry's full markdown) -->
-{entriesWithContent.map(({ entry, Content }, index) => (
+{entriesWithContent.map(({ entry, Content, modalImageSrc }, index) => (
   <div
     id={`entry-${index}`}
     class="hidden entry-content"
@@ -175,6 +226,8 @@ function parseYear(dateString: string): number {
     data-address={entry.data.address || ''}
     data-style={entry.data.architectural_style || ''}
     data-sources={JSON.stringify(entry.data.sources || [])}
+    data-image={modalImageSrc || ''}
+    data-image-credit={entry.data.image_credit || ''}
   >
     <Content />
   </div>
@@ -209,6 +262,12 @@ function parseYear(dateString: string): number {
             </svg>
           </button>
         </div>
+      </div>
+
+      <!-- Image (if available) -->
+      <div id="modal-image-container" class="hidden px-4 py-5 sm:px-6">
+        <img id="modal-image" src="" alt="" class="w-full object-contain" style="max-width: 848px; height: auto;" loading="lazy" />
+        <div id="modal-image-credit" class="pt-2 text-xs text-gray-700"></div>
       </div>
 
       <!-- Body -->
@@ -272,6 +331,9 @@ function parseYear(dateString: string): number {
     const modalContent = document.getElementById('modal-content');
     const modalSourcesContainer = document.getElementById('modal-sources-container');
     const modalSources = document.getElementById('modal-sources');
+    const modalImageContainer = document.getElementById('modal-image-container');
+    const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+    const modalImageCredit = document.getElementById('modal-image-credit');
 
     // Get data from the hidden entry element
     const title = entryElement.dataset.title || '';
@@ -280,6 +342,8 @@ function parseYear(dateString: string): number {
     const address = entryElement.dataset.address || '';
     const style = entryElement.dataset.style || 'N/A';
     const sources = JSON.parse(entryElement.dataset.sources || '[]');
+    const image = entryElement.dataset.image || '';
+    const imageCredit = entryElement.dataset.imageCredit || '';
 
     if (modalTitle) modalTitle.textContent = title;
     if (modalSubtitle) modalSubtitle.textContent = `${year} • ${location}`;
@@ -299,6 +363,25 @@ function parseYear(dateString: string): number {
       modalStyle.style.backgroundColor = colors.bg;
       modalStyle.style.color = colors.text;
       modalStyleContainer.classList.remove('hidden');
+    }
+
+    // Handle image display
+    if (image && modalImageContainer && modalImage) {
+      try {
+        modalImage.src = image;
+        modalImage.alt = title;
+        if (imageCredit && modalImageCredit) {
+          modalImageCredit.textContent = imageCredit;
+        } else if (modalImageCredit) {
+          modalImageCredit.textContent = '';
+        }
+        modalImageContainer.classList.remove('hidden');
+      } catch (err) {
+        console.error('Error loading image:', err);
+        modalImageContainer.classList.add('hidden');
+      }
+    } else if (modalImageContainer) {
+      modalImageContainer.classList.add('hidden');
     }
 
     // Clone and insert the rich content
@@ -340,7 +423,7 @@ function parseYear(dateString: string): number {
   // Add click handlers to all view details buttons
   document.querySelectorAll('.view-details-btn').forEach(button => {
     button.addEventListener('click', (e) => {
-      const btn = e.target as HTMLButtonElement;
+      const btn = e.currentTarget as HTMLButtonElement;
       const entryId = btn.dataset.entryId;
       if (entryId) {
         openModal(entryId);
@@ -400,8 +483,8 @@ function parseYear(dateString: string): number {
 
     tableRows.forEach((row) => {
       const rowElement = row as HTMLElement;
-      const titleCell = rowElement.querySelector('td:nth-child(2)');
-      const locationCell = rowElement.querySelector('td:nth-child(3)');
+      const titleCell = rowElement.querySelector('td:nth-child(3)'); // Title is now 3rd column (after image and date)
+      const locationCell = rowElement.querySelector('td:nth-child(4)'); // Location is now 4th column
 
       if (!titleCell || !locationCell) return;
 

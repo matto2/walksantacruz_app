@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Global cursor pointer for all clickable elements */
+a, button, [role="button"], [onclick] {
+  cursor: pointer;
+}
+
 /* Fix mobile scrolling issues with Leaflet map */
 #map {
   touch-action: pan-x pan-y;
