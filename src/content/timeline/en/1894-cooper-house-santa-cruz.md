@@ -1,5 +1,5 @@
 ---
-title: "Cooper House"
+title: "Cooper House (former version)"
 date: "1894-01-01"
 location: "Downtown Santa Cruz"
 latitude: 36.97479
