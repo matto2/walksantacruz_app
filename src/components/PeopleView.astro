@@ -1,24 +1,19 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import { getStyleColor } from "../content/config";
 
-// For static generation, load only English entries by default
-// Language switching will trigger a page reload
-let timelineEntries: CollectionEntry<"timeline">[] = [];
+let peopleEntries: CollectionEntry<"people">[] = [];
 let error: string | null = null;
 
 try {
-  // Load ALL entries from all languages
-  // Client-side JavaScript will filter based on localStorage
-  timelineEntries = await getCollection("timeline");
+  peopleEntries = await getCollection("people");
 } catch (e) {
-  error = "Failed to load timeline entries. Please try refreshing the page.";
-  console.error("Error loading timeline:", e);
+  error = "Failed to load people entries. Please try refreshing the page.";
+  console.error("Error loading people:", e);
 }
 
-const sortedEntries = timelineEntries.sort(
-  (a: CollectionEntry<"timeline">, b: CollectionEntry<"timeline">) => {
-    return a.data.date.localeCompare(b.data.date);
+const sortedEntries = peopleEntries.sort(
+  (a: CollectionEntry<"people">, b: CollectionEntry<"people">) => {
+    return a.data.birth_date.localeCompare(b.data.birth_date);
   }
 );
 
@@ -33,18 +28,27 @@ const entriesWithContent = await Promise.all(
 // Helper function to safely parse year from date string
 function parseYear(dateString: string): number {
   try {
-    // Handle YYYY-MM-DD format - extract year directly from string
     if (dateString.includes('-')) {
       const year = parseInt(dateString.split('-')[0], 10);
       return isNaN(year) ? 0 : year;
     }
-    // Handle YYYY format
     const year = parseInt(dateString, 10);
     return isNaN(year) ? 0 : year;
   } catch (e) {
     console.error("Error parsing date:", dateString, e);
     return 0;
   }
+}
+
+// Helper function to format dates nicely
+function formatDateRange(birthDate: string, deathDate?: string): string {
+  const birthYear = parseYear(birthDate);
+  const deathYear = deathDate ? parseYear(deathDate) : null;
+
+  if (deathYear) {
+    return `${birthYear}–${deathYear}`;
+  }
+  return `${birthYear}–present`;
 }
 ---
 
@@ -56,7 +60,7 @@ function parseYear(dateString: string): number {
 ) : sortedEntries.length === 0 ? (
   <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg" role="alert">
     <p class="font-medium">No entries found</p>
-    <p class="text-sm">There are no timeline entries to display yet. Add some entries to get started!</p>
+    <p class="text-sm">There are no people entries to display yet.</p>
   </div>
 ) : (
 <div>
@@ -65,11 +69,11 @@ function parseYear(dateString: string): number {
     <div class="relative">
       <input
         type="text"
-        id="timeline-search"
-        placeholder="Search by title, location, or description..."
+        id="people-search"
+        placeholder="Search by name, occupation, or significance..."
         class="w-full px-4 py-3 pl-11 border border-gray-300 rounded-lg focus:ring-2 focus:ring-offset-2 shadow-sm"
         style="--tw-ring-color: rgb(226, 111, 4);"
-        aria-label="Search timeline entries"
+        aria-label="Search people entries"
       />
       <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -78,7 +82,7 @@ function parseYear(dateString: string): number {
   </div>
 
   <!-- No Results Message -->
-  <div id="no-results" class="hidden bg-yellow-50 border border-yellow-200 text-yellow-700 px-4 py-3 rounded-lg mb-4">
+  <div id="people-no-results" class="hidden bg-yellow-50 border border-yellow-200 text-yellow-700 px-4 py-3 rounded-lg mb-4">
     <p class="font-medium">No matching entries found</p>
     <p class="text-sm">Try adjusting your search.</p>
   </div>
@@ -88,73 +92,36 @@ function parseYear(dateString: string): number {
   <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
     <thead class="text-white" style="background-color: rgb(226, 111, 4);">
       <tr>
-        <th class="px-6 py-3 text-left text-sm font-semibold">Date</th>
-        <th class="px-6 py-3 text-left text-sm font-semibold">Title</th>
-        <th class="px-6 py-3 text-left text-sm font-semibold">Location</th>
-        <th class="px-6 py-3 text-left text-sm font-semibold">Architectural Style</th>
+        <th class="px-6 py-3 text-left text-sm font-semibold">Name</th>
+        <th class="px-6 py-3 text-left text-sm font-semibold">Lifespan</th>
+        <th class="px-6 py-3 text-left text-sm font-semibold">Occupations</th>
+        <th class="px-6 py-3 text-left text-sm font-semibold">Significance</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
       {entriesWithContent.map(({ entry }, index) => (
           <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"} data-lang={entry.id.split('/')[0]}>
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                {parseYear(entry.data.date)}
-              </td>
               <td class="px-6 py-4 text-sm">
                 <button
                   class="view-details-btn text-left font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 rounded transition-all"
                   style="color: rgb(226, 111, 4); --tw-ring-color: rgb(226, 111, 4);"
                   onmouseover="this.style.color='rgb(180, 83, 9)'; this.style.textDecoration='underline'; this.style.textDecorationColor='rgb(180, 83, 9)'; this.style.textDecorationThickness='2px'"
                   onmouseout="this.style.color='rgb(226, 111, 4)'; this.style.textDecoration='none'"
-                  data-entry-id={`entry-${index}`}
-                  title="Click to view full details"
+                  data-entry-id={`people-entry-${index}`}
+                  title="Click to view full biography"
                 >
-                  {entry.data.title}
+                  {entry.data.name}
                 </button>
               </td>
-              <td class="px-6 py-4 text-sm text-gray-600">
-                <button
-                  class="view-on-map-btn text-left transition-colors focus:outline-none"
-                  style="--hover-color: rgb(226, 111, 4);"
-                  data-lat={entry.data.latitude}
-                  data-lng={entry.data.longitude}
-                  data-title={entry.data.title}
-                  title="View on map"
-                  onmouseover="this.style.color='rgb(226, 111, 4)'"
-                  onmouseout="this.style.color=''"
-                  onfocus="this.style.color='rgb(226, 111, 4)'"
-                  onblur="this.style.color=''"
-                >
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 flex-shrink-0" style="color: rgb(226, 111, 4);" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="underline decoration-dotted">
-                      {(() => {
-                        const address = entry.data.address || entry.data.location;
-                        // Remove ", Santa Cruz, California" and ", Santa Cruz" and ", California" variations
-                        return address
-                          .replace(/, Santa Cruz, California$/i, '')
-                          .replace(/, Santa Cruz$/i, '')
-                          .replace(/, California$/i, '');
-                      })()}
-                    </span>
-                  </div>
-                </button>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {formatDateRange(entry.data.birth_date, entry.data.death_date)}
               </td>
               <td class="px-6 py-4 text-sm text-gray-600">
-                {(() => {
-                  const style = entry.data.architectural_style || "N/A";
-                  const colors = getStyleColor(style);
-                  return (
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                      style={`background-color: ${colors.bg}; color: ${colors.text};`}
-                    >
-                      {style}
-                    </span>
-                  );
-                })()}
+                {entry.data.occupations?.slice(0, 2).join(', ') || 'N/A'}
+                {entry.data.occupations && entry.data.occupations.length > 2 && '...'}
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">
+                {entry.data.significance.substring(0, 100)}...
               </td>
           </tr>
       ))}
@@ -167,13 +134,14 @@ function parseYear(dateString: string): number {
 <!-- Hidden content for modal (each entry's full markdown) -->
 {entriesWithContent.map(({ entry, Content }, index) => (
   <div
-    id={`entry-${index}`}
+    id={`people-entry-${index}`}
     class="hidden entry-content"
-    data-title={entry.data.title}
-    data-year={parseYear(entry.data.date)}
-    data-location={entry.data.location}
-    data-address={entry.data.address || ''}
-    data-style={entry.data.architectural_style || ''}
+    data-name={entry.data.name}
+    data-birth-date={entry.data.birth_date}
+    data-death-date={entry.data.death_date || ''}
+    data-birth-place={entry.data.birth_place || ''}
+    data-death-place={entry.data.death_place || ''}
+    data-occupations={JSON.stringify(entry.data.occupations || [])}
     data-sources={JSON.stringify(entry.data.sources || [])}
   >
     <Content />
@@ -181,9 +149,9 @@ function parseYear(dateString: string): number {
 ))}
 
 <!-- Modal -->
-<div id="details-modal" class="hidden fixed inset-0 z-[1100] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div id="people-details-modal" class="hidden fixed inset-0 z-[1100] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   <!-- Backdrop -->
-  <div class="fixed inset-0 bg-black/50 transition-opacity" id="modal-backdrop"></div>
+  <div class="fixed inset-0 bg-black/50 transition-opacity" id="people-modal-backdrop"></div>
 
   <!-- Modal Content -->
   <div class="relative flex min-h-full items-center justify-center p-4 sm:p-0">
@@ -192,8 +160,8 @@ function parseYear(dateString: string): number {
       <div class="px-4 py-4 sm:px-6" style="background-color: rgb(226, 111, 4);">
         <div class="flex items-start justify-between">
           <div class="flex-1">
-            <h3 class="text-xl font-semibold text-white" id="modal-title"></h3>
-            <p class="mt-1 text-sm opacity-90 text-white" id="modal-subtitle"></p>
+            <h3 class="text-xl font-semibold text-white" id="people-modal-title"></h3>
+            <p class="mt-1 text-sm opacity-90 text-white" id="people-modal-subtitle"></p>
           </div>
           <button
             type="button"
@@ -201,7 +169,7 @@ function parseYear(dateString: string): number {
             style="background-color: rgb(180, 83, 9);"
             onmouseover="this.style.backgroundColor='rgb(154, 52, 18)'"
             onmouseout="this.style.backgroundColor='rgb(180, 83, 9)'"
-            id="close-modal"
+            id="people-close-modal"
             aria-label="Close modal"
           >
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -214,23 +182,23 @@ function parseYear(dateString: string): number {
       <!-- Body -->
       <div class="bg-white px-4 py-5 sm:p-6">
         <div class="space-y-4">
-          <!-- Location Info -->
-          <div id="modal-location" class="text-sm text-gray-600"></div>
+          <!-- Life info -->
+          <div id="people-modal-info" class="text-sm text-gray-600"></div>
 
-          <!-- Architectural Style Badge -->
-          <div id="modal-style-container">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800" id="modal-style"></span>
+          <!-- Occupations -->
+          <div id="people-modal-occupations-container" class="hidden">
+            <div class="flex flex-wrap gap-2" id="people-modal-occupations"></div>
           </div>
 
           <!-- Rich Content Area -->
-          <div id="modal-content" class="prose prose-sm max-w-none">
+          <div id="people-modal-content" class="prose prose-sm max-w-none">
             <!-- Content will be injected here -->
           </div>
 
           <!-- Sources -->
-          <div id="modal-sources-container" class="hidden pt-4 border-t border-gray-200">
+          <div id="people-modal-sources-container" class="hidden pt-4 border-t border-gray-200">
             <h4 class="font-semibold text-gray-900 mb-2">Sources:</h4>
-            <ul class="space-y-1 text-sm" id="modal-sources"></ul>
+            <ul class="space-y-1 text-sm" id="people-modal-sources"></ul>
           </div>
         </div>
       </div>
@@ -243,7 +211,7 @@ function parseYear(dateString: string): number {
           style="background-color: rgb(226, 111, 4); --tw-ring-color: rgb(226, 111, 4);"
           onmouseover="this.style.backgroundColor='rgb(180, 83, 9)'"
           onmouseout="this.style.backgroundColor='rgb(226, 111, 4)'"
-          id="close-modal-footer"
+          id="people-close-modal-footer"
         >
           Close
         </button>
@@ -253,52 +221,80 @@ function parseYear(dateString: string): number {
 </div>
 
 <script>
-  import { getStyleColor } from "../utils/styleColors";
+  // Helper function to parse year
+  function parseYear(dateString: string): number {
+    if (!dateString) return 0;
+    if (dateString.includes('-')) {
+      return parseInt(dateString.split('-')[0], 10);
+    }
+    return parseInt(dateString, 10);
+  }
+
+  // Helper function to format date range
+  function formatDateRange(birthDate: string, deathDate: string): string {
+    const birthYear = parseYear(birthDate);
+    const deathYear = deathDate ? parseYear(deathDate) : null;
+
+    if (deathYear) {
+      return `${birthYear}–${deathYear}`;
+    }
+    return `${birthYear}–present`;
+  }
 
   // Modal functionality
-  const modal = document.getElementById('details-modal');
-  const modalBackdrop = document.getElementById('modal-backdrop');
-  const closeButtons = [document.getElementById('close-modal'), document.getElementById('close-modal-footer'), modalBackdrop];
+  const modal = document.getElementById('people-details-modal');
+  const modalBackdrop = document.getElementById('people-modal-backdrop');
+  const closeButtons = [document.getElementById('people-close-modal'), document.getElementById('people-close-modal-footer'), modalBackdrop];
 
   function openModal(entryId: string) {
     const entryElement = document.getElementById(entryId);
     if (!entryElement) return;
 
-    const modalTitle = document.getElementById('modal-title');
-    const modalSubtitle = document.getElementById('modal-subtitle');
-    const modalLocation = document.getElementById('modal-location');
-    const modalStyleContainer = document.getElementById('modal-style-container');
-    const modalStyle = document.getElementById('modal-style');
-    const modalContent = document.getElementById('modal-content');
-    const modalSourcesContainer = document.getElementById('modal-sources-container');
-    const modalSources = document.getElementById('modal-sources');
+    const modalTitle = document.getElementById('people-modal-title');
+    const modalSubtitle = document.getElementById('people-modal-subtitle');
+    const modalInfo = document.getElementById('people-modal-info');
+    const modalOccupationsContainer = document.getElementById('people-modal-occupations-container');
+    const modalOccupations = document.getElementById('people-modal-occupations');
+    const modalContent = document.getElementById('people-modal-content');
+    const modalSourcesContainer = document.getElementById('people-modal-sources-container');
+    const modalSources = document.getElementById('people-modal-sources');
 
     // Get data from the hidden entry element
-    const title = entryElement.dataset.title || '';
-    const year = entryElement.dataset.year || '';
-    const location = entryElement.dataset.location || '';
-    const address = entryElement.dataset.address || '';
-    const style = entryElement.dataset.style || 'N/A';
+    const name = entryElement.dataset.name || '';
+    const birthDate = entryElement.dataset.birthDate || '';
+    const deathDate = entryElement.dataset.deathDate || '';
+    const birthPlace = entryElement.dataset.birthPlace || '';
+    const deathPlace = entryElement.dataset.deathPlace || '';
+    const occupations = JSON.parse(entryElement.dataset.occupations || '[]');
     const sources = JSON.parse(entryElement.dataset.sources || '[]');
 
-    if (modalTitle) modalTitle.textContent = title;
-    if (modalSubtitle) modalSubtitle.textContent = `${year} • ${location}`;
+    if (modalTitle) modalTitle.textContent = name;
+    if (modalSubtitle) modalSubtitle.textContent = formatDateRange(birthDate, deathDate);
 
-    if (modalLocation && address) {
-      modalLocation.textContent = address;
-      modalLocation.classList.remove('hidden');
-    } else if (modalLocation) {
-      modalLocation.classList.add('hidden');
+    // Birth and death places
+    if (modalInfo) {
+      const birthInfo = birthPlace ? `Born: ${birthPlace}` : '';
+      const deathInfo = deathPlace ? `Died: ${deathPlace}` : '';
+      const separator = birthInfo && deathInfo ? ' • ' : '';
+      modalInfo.textContent = birthInfo + separator + deathInfo;
+
+      if (birthInfo || deathInfo) {
+        modalInfo.classList.remove('hidden');
+      } else {
+        modalInfo.classList.add('hidden');
+      }
     }
 
-    if (modalStyleContainer && modalStyle) {
-      const colors = getStyleColor(style);
-
-      modalStyle.textContent = style;
-      modalStyle.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium';
-      modalStyle.style.backgroundColor = colors.bg;
-      modalStyle.style.color = colors.text;
-      modalStyleContainer.classList.remove('hidden');
+    // Occupations as badges
+    if (occupations.length > 0 && modalOccupationsContainer && modalOccupations) {
+      modalOccupations.innerHTML = occupations.map((occ: string) => `
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          ${occ}
+        </span>
+      `).join('');
+      modalOccupationsContainer.classList.remove('hidden');
+    } else if (modalOccupationsContainer) {
+      modalOccupationsContainer.classList.add('hidden');
     }
 
     // Clone and insert the rich content
@@ -362,36 +358,12 @@ function parseYear(dateString: string): number {
     }
   });
 
-  // Handle "View on Map" clicks
-  document.querySelectorAll('.view-on-map-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const btn = e.currentTarget as HTMLButtonElement;
-      const lat = parseFloat(btn.dataset.lat || '0');
-      const lng = parseFloat(btn.dataset.lng || '0');
-      const title = btn.dataset.title || '';
-
-      // Store the location data for the map to use
-      window.sessionStorage.setItem('mapCenter', JSON.stringify({ lat, lng, title }));
-
-      // Switch to map tab
-      const mapTab = document.getElementById('map-tab');
-      if (mapTab) {
-        mapTab.click();
-      }
-
-      // Dispatch custom event for map to listen to
-      window.dispatchEvent(new CustomEvent('centerMap', {
-        detail: { lat, lng, title }
-      }));
-    });
-  });
-
   // Language filtering functionality
   const currentLanguage = localStorage.getItem('preferred-language') || 'en';
 
   // Search functionality
-  const searchInput = document.getElementById('timeline-search') as HTMLInputElement;
-  const noResults = document.getElementById('no-results') as HTMLElement;
+  const searchInput = document.getElementById('people-search') as HTMLInputElement;
+  const noResults = document.getElementById('people-no-results') as HTMLElement;
   const tableRows = document.querySelectorAll('tbody tr');
 
   function filterTable() {
@@ -400,13 +372,13 @@ function parseYear(dateString: string): number {
 
     tableRows.forEach((row) => {
       const rowElement = row as HTMLElement;
-      const titleCell = rowElement.querySelector('td:nth-child(2)');
-      const locationCell = rowElement.querySelector('td:nth-child(3)');
+      const cells = rowElement.querySelectorAll('td');
 
-      if (!titleCell || !locationCell) return;
+      if (cells.length < 4) return;
 
-      const title = titleCell.textContent?.toLowerCase() || '';
-      const location = locationCell.textContent?.toLowerCase() || '';
+      const name = cells[0].textContent?.toLowerCase() || '';
+      const occupations = cells[2].textContent?.toLowerCase() || '';
+      const significance = cells[3].textContent?.toLowerCase() || '';
       const rowLang = rowElement.dataset.lang || 'en';
 
       // Check language match
@@ -414,8 +386,9 @@ function parseYear(dateString: string): number {
 
       // Check search match
       const matchesSearch = !searchTerm ||
-        title.includes(searchTerm) ||
-        location.includes(searchTerm);
+        name.includes(searchTerm) ||
+        occupations.includes(searchTerm) ||
+        significance.includes(searchTerm);
 
       // Show/hide row based on both language and search
       if (matchesLanguage && matchesSearch) {

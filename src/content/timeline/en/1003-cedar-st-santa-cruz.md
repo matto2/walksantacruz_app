@@ -20,7 +20,7 @@ The **Santa Cruz Hotel**, located at 1003 Cedar Street, was built in **1877** an
 
 Originally constructed in a **Late Victorian Commercial / Italianate** style, the Santa Cruz Hotel reflected the architectural trends of the late 19th century with ornamental woodwork, tall narrow windows, and bracketed cornices typical of the era.
 
-In the **late 1930s**, the building underwent a major remodel of its **ground floor**, which introduced **Streamline Moderne** design elements — a popular style of the Art Deco period characterized by curved corners, horizontal lines, and smooth surfaces. This redesign is commonly attributed to local architect **C. E. Butner**. The updated façade was in place by **1971**, as documented in UCSC library archives.
+In the **late 1930s**, the building underwent a major remodel of its **ground floor**, which introduced **Streamline Moderne** design elements — a popular style of the Art Deco period characterized by curved corners, horizontal lines, and smooth surfaces. This redesign is commonly attributed to local architect **C. E. Butner**.
 
 ## Later Uses
 

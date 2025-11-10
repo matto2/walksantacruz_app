@@ -1,13 +1,27 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
+import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://walksantacruz.com',
+  trailingSlash: 'never',
   devToolbar: {
     enabled: false
   },
+  integrations: [
+    sitemap(),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/'
+        }
+      ]
+    })
+  ],
   vite: {
     plugins: [tailwindcss()]
   }

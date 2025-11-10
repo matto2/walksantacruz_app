@@ -7,23 +7,72 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  lang?: string;
 }
 
 const {
   title,
-  description = "Santa Cruz Historical Timeline & Architectural Guide",
+  description = "Explore 18+ historical landmarks in downtown Santa Cruz and Mission Hill. Interactive timeline and map featuring architectural history from 1769 to 1989, available in English, Spanish, Chinese, and Japanese.",
+  image = "/footprints-ICON-white.svg",
+  lang = "en"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteURL = Astro.site?.toString().replace(/\/$/, '') || 'https://walksantacruz.com';
+const fullImageURL = new URL(image, Astro.site).toString();
+
+// Multilingual support - alternate language versions
+const languages = ['en', 'es', 'zh-CN', 'ja'];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Multilingual hreflang tags -->
+    {languages.map((langCode) => (
+      <link
+        rel="alternate"
+        hreflang={langCode}
+        href={`${siteURL}${Astro.url.pathname}`}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteURL}${Astro.url.pathname}`} />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageURL} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : lang === 'es' ? 'es_ES' : lang === 'zh-CN' ? 'zh_CN' : 'ja_JP'} />
+    <meta property="og:site_name" content="Walk Santa Cruz" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={fullImageURL} />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Santa Cruz history, downtown Santa Cruz, Mission Hill, walking tour, historical landmarks, architecture, California history, heritage tourism" />
+    <meta name="author" content="Walk Santa Cruz" />
   </head>
   <body class="bg-gray-50 text-gray-900">
     <slot />

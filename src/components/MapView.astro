@@ -1,8 +1,8 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 
-// For static generation, load ALL language entries
-// Client-side JavaScript will filter based on localStorage
+// For static generation, load entries from all languages
+// Group by language for efficient client-side switching
 let timelineEntries: CollectionEntry<"timeline">[] = [];
 let error: string | null = null;
 
@@ -14,10 +14,13 @@ try {
   console.error("Error loading timeline for map:", e);
 }
 
-// Create map data for ALL languages, each entry tagged with its language
-const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
+// Group map data by language for efficient loading
+const mapDataByLanguage = timelineEntries.reduce((acc, entry) => {
   const lang = entry.id.split('/')[0];
-  return {
+  if (!acc[lang]) {
+    acc[lang] = [];
+  }
+  acc[lang].push({
     title: entry.data.title,
     date: entry.data.date,
     location: entry.data.location,
@@ -26,10 +29,10 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
     longitude: entry.data.longitude,
     description: entry.data.description,
     architecturalStyle: entry.data.architectural_style,
-    sources: entry.data.sources,
-    lang: lang, // Add language tag
-  };
-});
+    sources: entry.data.sources
+  });
+  return acc;
+}, {} as Record<string, any[]>);
 ---
 
 {error ? (
@@ -37,7 +40,7 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
     <p class="font-medium">Error</p>
     <p class="text-sm">{error}</p>
   </div>
-) : mapData.length === 0 ? (
+) : Object.keys(mapDataByLanguage).length === 0 ? (
   <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg" role="alert">
     <p class="font-medium">No locations found</p>
     <p class="text-sm">There are no locations to display on the map yet.</p>
@@ -47,11 +50,12 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
     <div id="map-loading" class="w-full h-[600px] rounded-lg shadow-lg bg-gray-100 flex items-center justify-center">
       <div class="text-center">
         <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 mb-4" style="border-color: rgb(226, 111, 4);"></div>
-        <p class="text-gray-600">Loading map...</p>
+        <p class="text-gray-600 font-medium">Loading map...</p>
+        <p class="text-gray-500 text-sm mt-2">Initializing map tiles and markers</p>
       </div>
     </div>
     <div id="map" class="w-full h-[600px] rounded-lg shadow-lg hidden"></div>
-    <script is:inline set:html={`window.mapData = ${JSON.stringify(mapData)};`} />
+    <script is:inline set:html={`window.mapDataByLanguage = ${JSON.stringify(mapDataByLanguage)};`} />
   </div>
 )}
 
@@ -61,7 +65,7 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
 
   declare global {
     interface Window {
-      mapData: any[];
+      mapDataByLanguage: Record<string, any[]>;
       mapInstance?: any;
       mapMarkers?: any[];
       markerClusterGroup?: any;
@@ -140,12 +144,12 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
       // Get current language preference
       const currentLanguage = localStorage.getItem('preferred-language') || 'en';
 
-      // Filter map data by current language
-      const filteredMapData = window.mapData.filter(item => item.lang === currentLanguage);
+      // Get map data for current language only (much more efficient!)
+      const mapData = window.mapDataByLanguage[currentLanguage] || window.mapDataByLanguage['en'] || [];
 
-      // Add markers for each location (filtered by language)
+      // Add markers for each location
       window.mapMarkers = [];
-      filteredMapData.forEach(function (item) {
+      mapData.forEach(function (item) {
         const marker = L.marker([item.latitude, item.longitude]);
         window.mapMarkers.push({ marker, data: item });
 
@@ -212,16 +216,16 @@ const mapData = timelineEntries.map((entry: CollectionEntry<"timeline">) => {
     const mapTab = document.getElementById("map-tab");
     if (mapTab) {
       mapTab.addEventListener("click", function () {
-        // Small delay to ensure the tab content is visible
-        setTimeout(() => {
+        // Use requestAnimationFrame for smoother initialization
+        requestAnimationFrame(() => {
           initializeMap();
-          // Fix for mobile: invalidate size again after tab switch
+          // Fix for mobile: invalidate size after tab switch
           if (window.mapInstance) {
-            setTimeout(() => {
+            requestAnimationFrame(() => {
               window.mapInstance.invalidateSize();
-            }, 250);
+            });
           }
-        }, 50);
+        });
       });
     }
 

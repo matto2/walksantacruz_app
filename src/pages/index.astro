@@ -2,9 +2,78 @@
 import Layout from "../layouts/Layout.astro";
 import TimelineView from "../components/TimelineView.astro";
 import MapView from "../components/MapView.astro";
+import PeopleView from "../components/PeopleView.astro";
+import { getCollection } from "astro:content";
+
+// Load English timeline entries for structured data
+const timelineEntries = await getCollection("timeline", ({ id }) => id.startsWith('en/'));
+
+// Helper function to parse year
+function parseYear(dateString: string): number {
+  if (dateString.includes('-')) {
+    return parseInt(dateString.split('-')[0], 10);
+  }
+  return parseInt(dateString, 10);
+}
+
+// Create structured data for historical places
+const historicalPlaces = timelineEntries.map((entry) => ({
+  "@type": "TouristAttraction",
+  "@id": `https://walksantacruz.com#${entry.slug}`,
+  "name": entry.data.title,
+  "description": entry.data.description,
+  "address": entry.data.address ? {
+    "@type": "PostalAddress",
+    "streetAddress": entry.data.address.split(',')[0],
+    "addressLocality": "Santa Cruz",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  } : undefined,
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": entry.data.latitude,
+    "longitude": entry.data.longitude
+  },
+  "yearBuilt": entry.data.year_built,
+  "touristType": "history enthusiast, architecture lover, walking tour participant"
+})).filter(place => place !== undefined);
+
+// Organization schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristInformationCenter",
+  "name": "Walk Santa Cruz",
+  "description": "Downtown & Mission Hill Walking Tour Timeline - Explore historical landmarks in Santa Cruz",
+  "url": "https://walksantacruz.com",
+  "logo": "https://walksantacruz.com/footprints-ICON-white.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Cruz",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "tourBookingPage": "https://walksantacruz.com"
+};
+
+// ItemList schema for all historical places
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Santa Cruz Historical Timeline",
+  "description": "A comprehensive timeline of historical landmarks in downtown Santa Cruz and Mission Hill from 1769 to 1989",
+  "numberOfItems": historicalPlaces.length,
+  "itemListElement": historicalPlaces.map((place, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": place
+  }))
+};
 ---
 
 <Layout title="Santa Cruz Historical Timeline">
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   <div class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="text-white shadow-lg" style="background-color: rgb(226, 111, 4);">
@@ -55,6 +124,17 @@ import MapView from "../components/MapView.astro";
               tabindex="-1"
             >
               Map View
+            </button>
+            <button
+              id="people-tab"
+              class="tab-button border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 text-sm font-medium focus:outline-none"
+              data-tab="people"
+              role="tab"
+              aria-selected="false"
+              aria-controls="people-content"
+              tabindex="-1"
+            >
+              People
             </button>
           </div>
 
@@ -145,6 +225,18 @@ import MapView from "../components/MapView.astro";
           tabindex="0"
         >
           <MapView />
+        </div>
+
+        <!-- People View -->
+        <div
+          id="people-content"
+          class="tab-content hidden"
+          role="tabpanel"
+          aria-labelledby="people-tab"
+          aria-hidden="true"
+          tabindex="0"
+        >
+          <PeopleView />
         </div>
       </div>
     </div>
