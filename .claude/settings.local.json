@@ -4,7 +4,8 @@
       "WebFetch(domain:www.google.com)",
       "Bash(cat:*)",
       "Bash(npm run build:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

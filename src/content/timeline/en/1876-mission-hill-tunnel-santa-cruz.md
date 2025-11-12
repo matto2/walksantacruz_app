@@ -10,6 +10,8 @@ year_built: 1876
 architectural_style: "Railroad bore with timber framing, later concrete portals"
 altered: true
 historic_status: "Still active as part of the Santa Cruz Big Trees & Pacific Railway; the only original rail tunnel in the county still in service"
+image: "tunnel.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## A Passage Beneath the Hill

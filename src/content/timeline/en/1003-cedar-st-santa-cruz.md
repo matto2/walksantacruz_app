@@ -10,6 +10,8 @@ year_built: 1877
 architectural_style: "Italianate"
 altered: true
 historic_status: "City of Santa Cruz Historic Building Survey (Vol. II, #2/13, APN 005-047-09)"
+image: "sc-hotel.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Overview

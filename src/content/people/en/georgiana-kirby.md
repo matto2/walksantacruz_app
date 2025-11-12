@@ -5,7 +5,15 @@ death_date: "1887-01-27"
 birth_place: "Bristol, England"
 death_place: "Santa Cruz, California"
 description: "English-born teacher, writer, and social reformer who became one of California's first suffrage leaders. After experiencing communal living at Brook Farm, she moved to Santa Cruz in 1850 where she founded the Santa Cruz Society of Suffragists (1869) and hosted national suffrage leaders Susan B. Anthony and Elizabeth Cady Stanton."
-occupations: ["Teacher", "Writer", "Abolitionist", "Women's Rights Advocate", "Suffragist", "Social Reformer"]
+occupations:
+  [
+    "Teacher",
+    "Writer",
+    "Abolitionist",
+    "Women's Rights Advocate",
+    "Suffragist",
+    "Social Reformer",
+  ]
 significance: "Founded the Santa Cruz Society of Suffragists in 1869, one of California's earliest women's suffrage organizations. Hosted Susan B. Anthony and Elizabeth Cady Stanton during their 1871 California lecture tour. Connected Santa Cruz to the national women's rights movement decades before California women gained the vote in 1911. The Georgiana Bruce Kirby School in Santa Cruz is named in her honor."
 sources:
   - title: "Georgiana Bruce Kirby Papers - California Historical Society"
@@ -13,7 +21,17 @@ sources:
   - title: "E Clampus Vitus Historical Plaque - 117 Jordan Street"
   - title: "California Women's Suffrage Movement Records"
   - title: "Brook Farm Historical Society"
-tags: ["womens-rights", "suffrage", "abolitionist", "education", "transcendentalism", "brook-farm"]
+tags:
+  [
+    "womens-rights",
+    "suffrage",
+    "abolitionist",
+    "education",
+    "transcendentalism",
+    "brook-farm",
+  ]
+image: "kirby.jpg"
+image_credit: ""
 ---
 
 Georgiana Bruce Kirby was born in **Bristol, England** on **December 7, 1818** and became one of California's earliest and most influential advocates for women's rights, abolition, and social reform. Her life bridged continents, utopian experiments, and the frontier—bringing eastern progressive ideals to the developing West Coast.
@@ -53,6 +71,7 @@ Her work helped establish Santa Cruz as a center of suffrage activity on the Wes
 ## Writer and Public Intellectual
 
 Throughout her life, Kirby authored **essays, letters, and articles** on social reform topics including:
+
 - Women's education
 - Labor rights
 - Temperance

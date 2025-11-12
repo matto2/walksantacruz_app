@@ -48,6 +48,7 @@ const peopleSchema = z.object({
     .optional(),
   tags: z.array(z.string()).optional(),
   image: z.string().optional(), // Portrait or photo
+  image_credit: z.string().optional(), // Attribution for the image
 });
 
 // Define collections for each language

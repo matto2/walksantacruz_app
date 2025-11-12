@@ -5,13 +5,29 @@ death_date: "1905-08-15"
 birth_place: "Greenfield, Saratoga County, New York"
 death_place: "Santa Cruz, California"
 description: "Pioneer industrialist, Methodist minister, and civic leader who established Santa Cruz's first commercial block and foundry, becoming one of the city's founding fathers."
-occupations: ["Blacksmith", "Methodist Minister", "Industrialist", "California State Assemblyman", "Water Works Pioneer"]
+occupations:
+  [
+    "Blacksmith",
+    "Methodist Minister",
+    "Industrialist",
+    "California State Assemblyman",
+    "Water Works Pioneer",
+  ]
 significance: "Founded the first commercial block in Santa Cruz (Anthony Block), operated the Santa Cruz Foundry during the Gold Rush, co-built the first wharf with Henry Cowell, and co-created the city's first private water supply network. Served in the California State Assembly and advocated for integrated schools, though his legacy is complicated by his leadership in the anti-Chinese movement of the 1870s."
 sources:
   - title: "Santa Cruz Public Libraries Local History Collection"
   - title: "California State Assembly Historical Records"
   - title: "Santa Cruz Memorial Park Records"
-tags: ["founding-father", "industry", "civil-war-era", "progressive", "anti-chinese-movement"]
+tags:
+  [
+    "founding-father",
+    "industry",
+    "civil-war-era",
+    "progressive",
+    "anti-chinese-movement",
+  ]
+image: "anthony.jpg"
+image_credit: ""
 ---
 
 ## Early Life and Journey West
@@ -36,9 +52,11 @@ During the **Gold Rush era**, Anthony's ironworks proved invaluable. He profited
 Anthony's entrepreneurial vision extended beyond his foundry:
 
 ### Maritime Commerce
+
 With **Henry Cowell**, Anthony helped build Santa Cruz's **first wharf** (the **Cowell Wharf**), creating vital infrastructure for shipping lumber and lime—linking his efforts to the early economic life of the city.
 
 ### Water Works
+
 In **1865**, Anthony partnered with **Frederic A. Hihn** to create the **first private water-supply network** in Santa Cruz and nearby communities, helping modernize the region's infrastructure.
 
 ## Political Career and Progressive Advocacy

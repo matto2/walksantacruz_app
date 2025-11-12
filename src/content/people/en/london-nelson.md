@@ -19,6 +19,8 @@ sources:
   - title: "Evergreen Cemetery Records / Find a Grave"
     url: "https://www.findagrave.com"
 tags: ["african-american", "education", "philanthropy", "gold-rush", "freedom", "civil-rights"]
+image: "nelson.jpg"
+image_credit: "London Nelson Community Center"
 ---
 
 London Nelson was born enslaved in North Carolina around **1800** and lived through one of the most remarkable transformations of his time—from slavery to freedom to local benefactor in early Santa Cruz. His story embodies perseverance, generosity, and a deep belief in education as the key to progress.

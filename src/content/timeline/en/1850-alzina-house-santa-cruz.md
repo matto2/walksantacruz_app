@@ -10,6 +10,8 @@ year_built: 1850
 architectural_style: "Salt‑box wood‑frame"
 altered: true
 historic_status: "City of Santa Cruz Landmark; oldest frame house in Santa Cruz County"
+image: "alzinas.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## From Minorca to Mission Hill

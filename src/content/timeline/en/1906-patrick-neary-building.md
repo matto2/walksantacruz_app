@@ -15,6 +15,8 @@ sources:
   - title: "Pacific Avenue Historic District Records"
   - title: "Santa Cruz County Property Records"
 tags: ["architecture", "earthquake", "commercial", "downtown", "irish-heritage"]
+image: "neary2.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Replacing the Family's Wooden Buildings

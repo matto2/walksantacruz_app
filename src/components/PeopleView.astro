@@ -1,5 +1,22 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
+import { Image, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+// Load all images from src/images
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/*.{jpeg,jpg,png,gif,webp}');
+
+// Helper to get image path
+async function getImageSrc(imageName: string | undefined) {
+  if (!imageName) return null;
+  const imagePath = `/src/images/${imageName}`;
+  const imageModule = images[imagePath];
+  if (imageModule) {
+    const image = await imageModule();
+    return image.default;
+  }
+  return null;
+}
 
 let peopleEntries: CollectionEntry<"people">[] = [];
 let error: string | null = null;
@@ -21,7 +38,17 @@ const sortedEntries = peopleEntries.sort(
 const entriesWithContent = await Promise.all(
   sortedEntries.map(async (entry) => {
     const { Content } = await entry.render();
-    return { entry, Content };
+    // Only load image if entry has one defined
+    const imageSrc = entry.data.image ? await getImageSrc(entry.data.image) : null;
+
+    // Generate larger version for modal (848px wide max)
+    let modalImageSrc = null;
+    if (imageSrc) {
+      const largeImage = await getImage({ src: imageSrc, width: 848, format: 'webp' });
+      modalImageSrc = largeImage.src;
+    }
+
+    return { entry, Content, imageSrc, modalImageSrc };
   })
 );
 
@@ -92,6 +119,7 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
   <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
     <thead class="text-white" style="background-color: rgb(226, 111, 4);">
       <tr>
+        <th class="px-6 py-3 text-left text-sm font-semibold"></th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Name</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Lifespan</th>
         <th class="px-6 py-3 text-left text-sm font-semibold">Occupations</th>
@@ -99,8 +127,32 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
-      {entriesWithContent.map(({ entry }, index) => (
+      {entriesWithContent.map(({ entry, imageSrc }, index) => (
           <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"} data-lang={entry.id.split('/')[0]}>
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                {imageSrc ? (
+                  <button
+                    class="view-details-btn hover:opacity-80 transition-opacity"
+                    data-entry-id={`people-entry-${index}`}
+                    title="Click to view full biography"
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={entry.data.name}
+                      width={192}
+                      height={192}
+                      class="w-16 h-16 object-cover rounded"
+                      quality={90}
+                    />
+                  </button>
+                ) : (
+                  <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                    <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                )}
+              </td>
               <td class="px-6 py-4 text-sm">
                 <button
                   class="view-details-btn text-left font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 rounded transition-all"
@@ -132,7 +184,7 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
 )}
 
 <!-- Hidden content for modal (each entry's full markdown) -->
-{entriesWithContent.map(({ entry, Content }, index) => (
+{entriesWithContent.map(({ entry, Content, modalImageSrc }, index) => (
   <div
     id={`people-entry-${index}`}
     class="hidden entry-content"
@@ -143,6 +195,8 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
     data-death-place={entry.data.death_place || ''}
     data-occupations={JSON.stringify(entry.data.occupations || [])}
     data-sources={JSON.stringify(entry.data.sources || [])}
+    data-image={modalImageSrc || ''}
+    data-image-credit={entry.data.image_credit || ''}
   >
     <Content />
   </div>
@@ -177,6 +231,12 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
             </svg>
           </button>
         </div>
+      </div>
+
+      <!-- Image (if available) -->
+      <div id="people-modal-image-container" class="hidden px-4 py-5 sm:px-6">
+        <img id="people-modal-image" src="" alt="" class="w-full object-contain" style="max-width: 848px; height: auto;" loading="lazy" />
+        <div id="people-modal-image-credit" class="pt-2 text-xs text-gray-700"></div>
       </div>
 
       <!-- Body -->
@@ -258,6 +318,9 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
     const modalContent = document.getElementById('people-modal-content');
     const modalSourcesContainer = document.getElementById('people-modal-sources-container');
     const modalSources = document.getElementById('people-modal-sources');
+    const modalImageContainer = document.getElementById('people-modal-image-container');
+    const modalImage = document.getElementById('people-modal-image') as HTMLImageElement;
+    const modalImageCredit = document.getElementById('people-modal-image-credit');
 
     // Get data from the hidden entry element
     const name = entryElement.dataset.name || '';
@@ -267,9 +330,30 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
     const deathPlace = entryElement.dataset.deathPlace || '';
     const occupations = JSON.parse(entryElement.dataset.occupations || '[]');
     const sources = JSON.parse(entryElement.dataset.sources || '[]');
+    const image = entryElement.dataset.image || '';
+    const imageCredit = entryElement.dataset.imageCredit || '';
 
     if (modalTitle) modalTitle.textContent = name;
     if (modalSubtitle) modalSubtitle.textContent = formatDateRange(birthDate, deathDate);
+
+    // Handle image display
+    if (image && modalImageContainer && modalImage) {
+      try {
+        modalImage.src = image;
+        modalImage.alt = name;
+        if (imageCredit && modalImageCredit) {
+          modalImageCredit.textContent = imageCredit;
+        } else if (modalImageCredit) {
+          modalImageCredit.textContent = '';
+        }
+        modalImageContainer.classList.remove('hidden');
+      } catch (err) {
+        console.error('Error loading image:', err);
+        modalImageContainer.classList.add('hidden');
+      }
+    } else if (modalImageContainer) {
+      modalImageContainer.classList.add('hidden');
+    }
 
     // Birth and death places
     if (modalInfo) {
@@ -336,7 +420,7 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
   // Add click handlers to all view details buttons
   document.querySelectorAll('.view-details-btn').forEach(button => {
     button.addEventListener('click', (e) => {
-      const btn = e.target as HTMLButtonElement;
+      const btn = e.currentTarget as HTMLButtonElement;
       const entryId = btn.dataset.entryId;
       if (entryId) {
         openModal(entryId);

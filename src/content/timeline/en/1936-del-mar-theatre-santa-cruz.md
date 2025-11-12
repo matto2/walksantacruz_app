@@ -10,6 +10,8 @@ year_built: 1936
 architectural_style: "Art Deco"
 altered: true
 historic_status: "City of Santa Cruz Historic Building; restored 2002"
+image: "delmar.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Overview

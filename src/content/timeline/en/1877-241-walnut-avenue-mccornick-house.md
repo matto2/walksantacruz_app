@@ -10,6 +10,8 @@ year_built: 1877
 architectural_style: "Victorian Cottage (Carpenter Gothic / Queen Anne influences)"
 altered: true
 historic_status: "Part of the Santa Cruz Downtown Historic District – the city’s first downtown residential neighborhood"
+image: "mccornick.jpg"
+image_credit: "Photo by Joseph Alvarado,"
 ---
 
 ## A Christmas Gift and Early Neighborhood Roots

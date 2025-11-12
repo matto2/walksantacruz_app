@@ -10,13 +10,15 @@ year_built: 1850
 architectural_style: "Italianate with Colonial Revival elements"
 altered: true
 historic_status: "Original Methodist-Episcopal Church; first Protestant church in Santa Cruz"
+image: "123green-st.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Property Information
 
-| Address | Year Built | Original Use | Current Style | Notable Features |
-|---------|-----------|--------------|---------------|------------------|
-| 123 Green St | 1850 | Methodist-Episcopal Church | Italianate with Colonial Revival elements | First Protestant church in Santa Cruz; carriage block |
+| Address      | Year Built | Original Use               | Current Style                             | Notable Features                                      |
+| ------------ | ---------- | -------------------------- | ----------------------------------------- | ----------------------------------------------------- |
+| 123 Green St | 1850       | Methodist-Episcopal Church | Italianate with Colonial Revival elements | First Protestant church in Santa Cruz; carriage block |
 
 ## The Church Years (1850-1863)
 

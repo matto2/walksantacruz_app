@@ -10,6 +10,8 @@ year_built: 1937
 architectural_style: "Monterey‑Colonial Revival"
 altered: true
 historic_status: "Listed in Living New Deal site; City of Santa Cruz landmark"
+image: "cityhall.jpg"
+image_credit: ""
 ---
 
 ## A Civic Landmark for a Growing City
@@ -30,8 +32,9 @@ Across the street on Church Street stands the **Santa Cruz Civic Auditorium**, c
 
 ---
 
-**Sources:**  
-- [Living New Deal – *Santa Cruz City Hall*, Santa Cruz, CA](https://livingnewdeal.org/sites/santa-cruz-city-hall-santa-cruz-ca/)  
-- [Santa Cruz Public Libraries – *Santa Cruz City Hall* (historical notes)](https://history.santacruzpl.org/omeka/items/show/9457)  
-- Hamilton Historical Records – *The Santa Cruz City Hall*, Nov. 30 2018  
-- [Santa Cruz Civic Auditorium – *History & Events*](https://en.wikipedia.org/wiki/Santa_Cruz_Civic_Auditorium)  
+**Sources:**
+
+- [Living New Deal – _Santa Cruz City Hall_, Santa Cruz, CA](https://livingnewdeal.org/sites/santa-cruz-city-hall-santa-cruz-ca/)
+- [Santa Cruz Public Libraries – _Santa Cruz City Hall_ (historical notes)](https://history.santacruzpl.org/omeka/items/show/9457)
+- Hamilton Historical Records – _The Santa Cruz City Hall_, Nov. 30 2018
+- [Santa Cruz Civic Auditorium – _History & Events_](https://en.wikipedia.org/wiki/Santa_Cruz_Civic_Auditorium)

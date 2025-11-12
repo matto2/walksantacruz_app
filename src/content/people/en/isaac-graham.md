@@ -5,7 +5,15 @@ death_date: "1863-11-08"
 birth_place: "Virginia"
 death_place: "San Francisco, California"
 description: "Fur trapper turned timber entrepreneur and landowner whose tumultuous life included arrest during the 1840 Graham Affair, establishment of Santa Cruz Mountains sawmills, acquisition of vast redwood lands, and dramatic family scandals. His operations and the road named for him (Graham Hill Road) left a lasting mark on the Santa Cruz Mountains."
-occupations: ["Fur Trapper", "Mountain Man", "Distiller", "Lumber Baron", "Sawmill Operator", "Land Grant Holder"]
+occupations:
+  [
+    "Fur Trapper",
+    "Mountain Man",
+    "Distiller",
+    "Lumber Baron",
+    "Sawmill Operator",
+    "Land Grant Holder",
+  ]
 significance: "Central figure in the 1840 Graham Affair that strained Mexican-American relations in California. Pioneered timber industry in Santa Cruz Mountains through Rancho Zayante sawmill operations and purchased Rancho Punta del Año Nuevo. His life embodies the messy transition from Mexican to American California, including political intrigue, industrial development, and frontier personal dramas."
 sources:
   - title: "The Graham Affair - California Historical Society"
@@ -14,7 +22,17 @@ sources:
   - title: "Rancho Zayante Historical Records"
   - title: "Evergreen Cemetery Records, Santa Cruz"
   - title: "Santa Cruz County Historical Records"
-tags: ["mexican-era", "lumber", "political-intrigue", "rancho", "graham-affair", "frontier"]
+tags:
+  [
+    "mexican-era",
+    "lumber",
+    "political-intrigue",
+    "rancho",
+    "graham-affair",
+    "frontier",
+  ]
+image: "isaac-graham.jpg"
+image_credit: ""
 ---
 
 Isaac Graham was a fur-trapper turned timber entrepreneur and landowner whose life straddled the frontier wilderness and the legal and political dramas of early California.

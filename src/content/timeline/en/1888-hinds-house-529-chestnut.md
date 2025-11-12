@@ -10,6 +10,8 @@ year_built: 1888
 architectural_style: "Stick‑Eastlake Victorian"
 altered: true
 historic_status: "Listed on the National Register of Historic Places (NRHP #83001241); designated Santa Cruz Historic Landmark"
+image: "hinds.jpg"
+image_credit: ""
 ---
 
 When Alfred J. Hinds and his wife Sarah moved into their new home in **1889**, they weren’t just building one of Santa Cruz’s grandest residences — they were pushing into the future. The house was designed by **John H. Williams**, a prolific local architect who left his mark on some sixty buildings in the area.

@@ -5,7 +5,8 @@ death_date: "1890"
 birth_place: "Villa de Branciforte (now Santa Cruz), California"
 death_place: "Soquel, California"
 description: "One of the most prominent Californio women of the Mexican era, María Martina Castro received one of the largest land grants in Santa Cruz County—over 33,000 acres that became the foundation of Soquel, Capitola, and Aptos. She was one of the few women to independently petition for and manage such vast estates."
-occupations: ["Ranchera", "Land Grant Administrator", "Cattle Rancher", "Timber Manager"]
+occupations:
+  ["Ranchera", "Land Grant Administrator", "Cattle Rancher", "Timber Manager"]
 significance: "Received Rancho Soquel (1,668 acres in 1833) and Rancho Soquel Augmentation (32,000 acres in 1844), making her one of the largest landholders in Santa Cruz County. Her active role in petitioning and managing these grants demonstrated uncommon independence for women of her era. Her lands shaped the development of Soquel, Capitola, and Aptos."
 sources:
   - title: "Do You Know My Name? (Martina Castro Lodge) - Santa Cruz Museum of Art & History"
@@ -16,7 +17,17 @@ sources:
   - title: "Castro Adobe Historic Structure Report - California State Parks"
   - title: "Land case files, Soquel Augmentation ... Martina Castro - Bancroft Library, UC Berkeley"
     url: "https://bancroft.berkeley.edu"
-tags: ["californio", "mexican-era", "land-grant", "rancho", "women", "indigenous-heritage"]
+tags:
+  [
+    "californio",
+    "mexican-era",
+    "land-grant",
+    "rancho",
+    "women",
+    "indigenous-heritage",
+  ]
+image: "castro.jpg"
+image_credit: ""
 ---
 
 María Martina Castro y Amador was born in **1807** in **Villa de Branciforte**, which is now part of Santa Cruz. She became one of the most prominent **Californio women** of the Mexican era, receiving one of the largest land grants in what would become Santa Cruz County.

@@ -10,6 +10,8 @@ year_built: 1913
 architectural_style: "Victorian commercial/residential"
 altered: true
 historic_status: "Locally significant for cultural history and downtown Santa Cruz heritage"
+image: "millers.jpg"
+image_credit: ""
 ---
 
 ## From Dentist’s Office to Coffeehouse Hub

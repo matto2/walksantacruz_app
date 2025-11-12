@@ -10,6 +10,8 @@ year_built: 1793
 architectural_style: "Adobe"
 altered: true
 historic_status: "California Historical Landmark No. 342; part of the Santa Cruz Mission State Historic Park"
+image: "mission.jpg"
+image_credit: "1876 painting by Leon Trousset depicting mission life ~50 years earlier"
 ---
 
 ## Overview

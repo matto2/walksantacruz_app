@@ -10,6 +10,8 @@ year_built: 1894
 architectural_style: "Richardsonian Romanesque"
 altered: true
 historic_status: "Former Santa Cruz County Courthouse #5; later Cooper House; site now part of Abbott Square/MAH"
+image: "cooper-house.jpg"
+image_credit: "Santa Cruz Public Library"
 ---
 
 ## Overview

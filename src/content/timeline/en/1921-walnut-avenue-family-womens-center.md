@@ -10,6 +10,8 @@ year_built: 1921
 architectural_style: "Craftsman / Spanish Revival blend"
 altered: true
 historic_status: "Locally significant for cultural and social history; home of the Walnut Avenue Family & Women’s Center"
+image: "ywca.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Origins: A Home for Music and Art

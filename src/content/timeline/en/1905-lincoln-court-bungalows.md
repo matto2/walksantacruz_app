@@ -10,6 +10,8 @@ year_built: "c. 1905–1920"
 architectural_style: "Craftsman Bungalow Court"
 altered: true
 historic_status: "Contributing property within the Santa Cruz Downtown Historic District"
+image: "lincoln-court.jpg"
+image_credit: "Photo by Joseph Alvarado,"
 ---
 
 ## A Quiet Garden Court in Downtown Santa Cruz

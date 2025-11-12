@@ -15,6 +15,8 @@ tags:
 sources:
   - title: "Santa Cruz Waves - Lulu Carpenter's: The Sign of the Seamstress"
   - title: "Santa Cruz Historical Commission"
+image: "lulus.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## **History:**

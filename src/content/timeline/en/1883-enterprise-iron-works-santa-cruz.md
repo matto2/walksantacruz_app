@@ -10,6 +10,8 @@ year_built: 1883
 architectural_style: "Industrial Vernacular"
 altered: true
 historic_status: "City of Santa Cruz Historic Building Survey (Vol. III, APN 005-152-06)"
+image: "ironworks.jpg"
+image_credit: "Photo by M. O'Leary"
 ---
 
 ## Overview
@@ -35,8 +37,9 @@ Today, the Enterprise Iron Works stands as a **living monument to Santa Cruz’s
 
 ---
 
-**Sources:**  
-- [WCC Institute for Santa Cruz History – *Enterprise Iron Works*](https://www.wccinsc.com/mediawiki/Enterprise_Iron_Works)  
-- [Santa Cruz Sentinel – “How the Industrial Revolution Shaped Santa Cruz” (Ross Eric Gibson, 2020)](https://www.santacruzsentinel.com/2020/09/20/how-the-industrial-revolution-shaped-santa-cruz-ross-eric-gibson/)  
-- [YouTube – *Michael Leeds Restores the Enterprise Iron Works*](https://www.youtube.com/watch?v=UnbqJjCNb3w)  
-- [YouTube – *Big Bertha Returns to Santa Cruz*](https://www.youtube.com/watch?v=1CKphdiwlEo)
+**Sources:**
+
+- [WCC Institute for Santa Cruz History – _Enterprise Iron Works_](https://www.wccinsc.com/mediawiki/Enterprise_Iron_Works)
+- [Santa Cruz Sentinel – “How the Industrial Revolution Shaped Santa Cruz” (Ross Eric Gibson, 2020)](https://www.santacruzsentinel.com/2020/09/20/how-the-industrial-revolution-shaped-santa-cruz-ross-eric-gibson/)
+- [YouTube – _Michael Leeds Restores the Enterprise Iron Works_](https://www.youtube.com/watch?v=UnbqJjCNb3w)
+- [YouTube – _Big Bertha Returns to Santa Cruz_](https://www.youtube.com/watch?v=1CKphdiwlEo)
