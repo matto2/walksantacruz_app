@@ -142,11 +142,12 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
                       width={192}
                       height={192}
                       class="w-16 h-16 object-cover rounded"
+                      style="min-width: 4rem; min-height: 4rem;"
                       quality={90}
                     />
                   </button>
                 ) : (
-                  <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center" style="min-width: 4rem; min-height: 4rem;">
                     <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
                     </svg>
