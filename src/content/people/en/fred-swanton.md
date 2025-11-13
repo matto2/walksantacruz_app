@@ -5,7 +5,15 @@ death_date: "1940"
 birth_place: "Brooklyn, New York"
 death_place: "Santa Cruz, California"
 description: "Visionary entrepreneur who brought electricity to Santa Cruz through his Big Creek Power Company (1896), founded the Santa Cruz Beach Boardwalk, developed the first electric streetcar line, and served three terms as mayor. His infrastructure projects transformed Santa Cruz from a rural outpost into a modern seaside city."
-occupations: ["Entrepreneur", "Real Estate Developer", "Power Company Founder", "Mayor of Santa Cruz", "Boardwalk Founder", "Infrastructure Pioneer"]
+occupations:
+  [
+    "Entrepreneur",
+    "Real Estate Developer",
+    "Power Company Founder",
+    "Mayor of Santa Cruz",
+    "Boardwalk Founder",
+    "Infrastructure Pioneer",
+  ]
 significance: "Founded Big Creek Power Company in 1896, building California's third hydroelectric power plant and the state's first long-distance electric power system. Brought electricity to Santa Cruz, Capitola, and Watsonville. Founded the Santa Cruz Beach Boardwalk. Served as Santa Cruz mayor 1927-1933. The coastal village of Swanton is named in his honor."
 sources:
   - title: "Fred Swanton - Wikipedia"
@@ -14,7 +22,18 @@ sources:
     url: "https://www.santacruztrains.com/2021/03/people-fred-w-swanton.html"
   - title: "Big Creek Light and Power Company Historical Marker"
     url: "https://www.hmdb.org/m.asp?m=100965"
-tags: ["infrastructure", "electricity", "boardwalk", "mayor", "entrepreneur", "streetcar", "development"]
+tags:
+  [
+    "infrastructure",
+    "electricity",
+    "boardwalk",
+    "mayor",
+    "entrepreneur",
+    "streetcar",
+    "development",
+  ]
+image: "swanton.jpg"
+image_credit: "UCSC Digital Collections"
 ---
 
 Fred Wilder Swanton was born in **Brooklyn, New York** on **April 11, 1862**, the son of Albion Paris Kingston Swanton and Emily Jane Parshley of Maine. His father had moved to California earlier, and in **1866**, young Fred and his mother joined him. The following year, in **1867**, the family settled permanently in **Santa Cruz**—where Fred would spend the rest of his life reshaping the city's destiny.

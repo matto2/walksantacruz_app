@@ -5,7 +5,15 @@ death_date: "1913"
 birth_place: "Altendorf, Duchy of Brunswick (now Germany)"
 death_place: "Santa Cruz, California"
 description: "German immigrant and entrepreneur who became one of Santa Cruz County's most influential developers, controlling 5% of the county's land, establishing the first water system, founding Capitola, and building critical infrastructure including railroads and sawmills."
-occupations: ["Merchant", "Lumber Baron", "Land Developer", "Railroad Founder", "Water Works Pioneer", "California State Assemblyman"]
+occupations:
+  [
+    "Merchant",
+    "Lumber Baron",
+    "Land Developer",
+    "Railroad Founder",
+    "Water Works Pioneer",
+    "California State Assemblyman",
+  ]
 significance: "Transformed Santa Cruz from a remote lumber settlement into a thriving seaside community through his ventures in timber, real estate, water infrastructure, and transportation. Founded Camp Capitola (later the City of Capitola) and controlled vast redwood forests and coastal lands. His yellow mule story became local legend."
 sources:
   - title: "How I Came to Santa Cruz (memoir by Frederick A. Hihn)"
@@ -17,7 +25,18 @@ sources:
     url: "https://www.cityofcapitola.org"
   - title: "Immigrant Entrepreneurship: German American Business Biographies"
     url: "https://www.immigrantentrepreneurship.org"
-tags: ["founding-father", "german-immigrant", "lumber", "real-estate", "capitola", "water-works", "railroad"]
+tags:
+  [
+    "founding-father",
+    "german-immigrant",
+    "lumber",
+    "real-estate",
+    "capitola",
+    "water-works",
+    "railroad",
+  ]
+image: "hihn.jpg"
+image_credit: ""
 ---
 
 Frederick Augustus Hihn was one of the most ambitious and influential figures in the early development of Santa Cruz County. Born in **1829** in **Altendorf, Duchy of Brunswick** (now Germany), he immigrated to California during the **Gold Rush of 1849**. Like many, he came seeking gold, but quickly realized that lasting opportunity lay in enterprise, not the mines.

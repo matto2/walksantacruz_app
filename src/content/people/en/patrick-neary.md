@@ -5,7 +5,8 @@ death_date: "1933"
 birth_place: "Ireland"
 death_place: "Santa Cruz, California"
 description: "Irish immigrant who arrived in Santa Cruz in the 1860s and became a significant local landowner and entrepreneur. After the 1906 San Francisco earthquake damaged his family's wooden buildings on Pacific Avenue, he commissioned the Patrick Neary Building—a permanent stone commercial structure designed by Edward Van Cleeck in the Richardsonian Romanesque style that stands today."
-occupations: ["Landowner", "Real Estate Developer", "Businessman", "Restaurant Owner"]
+occupations:
+  ["Landowner", "Real Estate Developer", "Businessman", "Restaurant Owner"]
 significance: "Built the Patrick Neary Building at 1362 Pacific Avenue in 1906, one of downtown Santa Cruz's oldest surviving commercial structures. His decision to rebuild in stone after earthquake damage demonstrated foresight—the building survived the 1989 Loma Prieta earthquake when many neighboring structures failed. Represents Irish immigrant entrepreneurship and commercial development on Pacific Avenue."
 sources:
   - title: "Neary, Patrick - Santa Cruz County history wiki"
@@ -13,7 +14,17 @@ sources:
   - title: "Museum of Art & History – Santa Cruz Historic Landmarks Blue Plaque Program"
   - title: "Neary Building - HistoryPin"
     url: "https://www.historypin.org/en/explore/pin/1186953/"
-tags: ["irish-immigrant", "landowner", "entrepreneur", "pacific-avenue", "commercial-development", "earthquake"]
+tags:
+  [
+    "irish-immigrant",
+    "landowner",
+    "entrepreneur",
+    "pacific-avenue",
+    "commercial-development",
+    "earthquake",
+  ]
+image: "neary3.jpg"
+image_credit: ""
 ---
 
 Patrick Neary (1842–1933) was an Irish immigrant who arrived in Santa Cruz in the **1860s** and built one of the city's most enduring commercial landmarks. His story embodies the arc of Irish immigrant entrepreneurship in 19th-century California—from newcomer to substantial landowner and developer.
@@ -43,6 +54,7 @@ This choice demonstrated both financial confidence and practical foresight. Ston
 Neary commissioned **architect Edward Van Cleeck**, one of Santa Cruz's leading designers, to create a new building in the **Richardsonian Romanesque** style—a robust architectural language characterized by heavy masonry, rounded arches, and commanding street presence.
 
 Van Cleeck designed **1362 Pacific Avenue** with:
+
 - **Stone façade** with rusticated masonry
 - **Paired arched second-story windows** separated by columns with **Corinthian capitals**
 - **Iron columns** framing ground-floor storefronts for commercial flexibility
@@ -53,6 +65,7 @@ The building represented a significant investment and a statement of confidence 
 ## Commercial Legacy
 
 The ground floor of the Patrick Neary Building housed a succession of businesses over the decades:
+
 - The Neary family's **restaurant operations**
 - Shops, galleries, and retail businesses including **Artisans Gallery**, **Twist**, and **Shoe Fetish**
 - The **Neary Business Center**, a fitting tribute to the building's namesake

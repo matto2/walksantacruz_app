@@ -14,7 +14,17 @@ sources:
     url: "https://www.hmdb.org/m.asp?m=205298"
   - title: "Historic Mansions of Santa Cruz County"
     url: "https://sebfrey.com/historic-mansions-of-santa-cruz-county/"
-tags: ["architect", "victorian", "stick-eastlake", "design", "residential", "commercial"]
+tags:
+  [
+    "architect",
+    "victorian",
+    "stick-eastlake",
+    "design",
+    "residential",
+    "commercial",
+  ]
+image: "williams.jpg"
+image_credit: ""
 ---
 
 John H. Williams was one of the most prolific and influential architects working in Santa Cruz County during the late 19th century. Between **1876 and 1892**, he designed approximately **60 residential, commercial, and public buildings** that helped define the Victorian character of Santa Cruz during its period of rapid growth.
@@ -32,6 +42,7 @@ Williams' most celebrated surviving work is the **Alfred J. Hinds House** at **5
 Commissioned by **Alfred J. Hinds**, a successful real estate developer, and his wife Sarah, the home was intended to reflect their stature and taste. Williams delivered a residence that became **the largest surviving Stick-Eastlake house in Santa Cruz County**.
 
 The design features:
+
 - A magnificent central **two-story gabled porch**, partially recessed between square and octagonal corner bays
 - **Turned columns, newell posts, spindlework screens and balustrades** showcasing intricate woodwork
 - Entrance details composed of **wooden cubes, spheres, and decorative strips**

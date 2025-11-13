@@ -235,7 +235,9 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
 
       <!-- Image (if available) -->
       <div id="people-modal-image-container" class="hidden px-4 py-5 sm:px-6">
-        <img id="people-modal-image" src="" alt="" class="w-full object-contain" style="max-width: 848px; height: auto;" loading="lazy" />
+        <div id="people-modal-image-wrapper" class="w-full flex justify-center">
+          <img id="people-modal-image" src="" alt="" class="w-full object-contain" style="max-width: 848px; height: auto;" loading="lazy" />
+        </div>
         <div id="people-modal-image-credit" class="pt-2 text-xs text-gray-700"></div>
       </div>
 
@@ -341,6 +343,14 @@ function formatDateRange(birthDate: string, deathDate?: string): string {
       try {
         modalImage.src = image;
         modalImage.alt = name;
+
+        // Apply special styling for O'Hearn's image to reduce pixelation
+        if (name.includes("O'Hearn")) {
+          modalImage.style.maxWidth = '212px'; // Quarter of the normal 848px
+        } else {
+          modalImage.style.maxWidth = '848px'; // Normal size
+        }
+
         if (imageCredit && modalImageCredit) {
           modalImageCredit.textContent = imageCredit;
         } else if (modalImageCredit) {

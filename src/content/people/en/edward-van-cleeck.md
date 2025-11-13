@@ -14,7 +14,17 @@ sources:
     url: "https://www.santacruzsentinel.com/2023/08/20/the-new-santa-cruz-movement-ross-eric-gibson-local-history/"
   - title: "Van Cleeck House Historical Marker"
     url: "https://www.hmdb.org/m.asp?m=205046"
-tags: ["architect", "richardsonian-romanesque", "queen-anne", "civic-buildings", "downtown", "towers"]
+tags:
+  [
+    "architect",
+    "richardsonian-romanesque",
+    "queen-anne",
+    "civic-buildings",
+    "downtown",
+    "towers",
+  ]
+image: "vancleek.jpg"
+image_credit: ""
 ---
 
 Edward Van Cleeck was a North Carolina-born architect who became one of Santa Cruz's most influential designers of civic and commercial architecture in the late 19th and early 20th centuries. Known affectionately as the **"Merchant of Towers"** for his love of towers, turrets, and cupolas, Van Cleeck helped shape downtown Santa Cruz's distinctive architectural character.

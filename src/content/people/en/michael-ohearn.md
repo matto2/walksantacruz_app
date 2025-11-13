@@ -5,7 +5,13 @@ death_date: "2011-08-02"
 birth_place: "Unknown"
 death_place: "Santa Cruz, California"
 description: "Retired Silicon Valley architect who dedicated his later career to historic preservation in Santa Cruz. Through his firm 'Michael O'Hearn & Artisans,' he restored over 30 historic homes and landscapes in Santa Cruz, including the landmark Lincoln Court (1990) and the McCornick House. His meticulous attention to detail and signature landscaping aesthetic helped define downtown Santa Cruz's preservation movement."
-occupations: ["Architect", "Historic Preservationist", "Restoration Specialist", "Landscape Designer"]
+occupations:
+  [
+    "Architect",
+    "Historic Preservationist",
+    "Restoration Specialist",
+    "Landscape Designer",
+  ]
 significance: "Restored over 30 historic homes and landscapes in Santa Cruz during the 1990s and 2000s, including Lincoln Court (1990) and the McCornick House. His work helped secure properties within the Santa Cruz Downtown Historic District. His signature aesthetic—cleanly trimmed hedges and attention to original architectural details—became a visual trademark of neighborhood revival efforts."
 sources:
   - title: "Michael O'Hearn Obituary (2011) - Mercury News"
@@ -14,7 +20,17 @@ sources:
     url: "https://www.hmdb.org/m.asp?m=205302"
   - title: "Gentle barriers: 'Narrowscapes' define architect's vision - Santa Cruz Sentinel (1997)"
     url: "https://history.santacruzpl.org/omeka/items/show/135591"
-tags: ["architect", "historic-preservation", "restoration", "craftsman", "downtown", "lincoln-court"]
+tags:
+  [
+    "architect",
+    "historic-preservation",
+    "restoration",
+    "craftsman",
+    "downtown",
+    "lincoln-court",
+  ]
+image: "ohearn4.jpg"
+image_credit: ""
 ---
 
 Michael O'Hearn (1940–2011) was a retired Silicon Valley architect who found his true calling in historic preservation, dedicating the latter part of his career to restoring and protecting Santa Cruz's architectural heritage. Through his firm **"Michael O'Hearn & Artisans,"** he meticulously restored over **30 historic homes and landscapes** in Santa Cruz, helping to establish the city's reputation for thoughtful preservation and adaptive reuse.
@@ -34,6 +50,7 @@ His preservation philosophy combined architectural accuracy with practical livab
 O'Hearn's most celebrated restoration project was **Lincoln Court** (315-323 Lincoln Street), a complex of **bungalow-court housing** built between **1905 and 1920**.
 
 In **1990**, O'Hearn and his team undertook a comprehensive restoration that preserved Lincoln Court's:
+
 - **Modest Craftsman proportions** and distinctive rhythm
 - **Central landscaped courtyard** that created a peaceful residential enclave
 - **Low-pitched roofs, wood siding, exposed rafter tails, and paired porches**
@@ -73,6 +90,7 @@ Michael O'Hearn died on **August 2, 2011** at age **71** in Santa Cruz. His lega
 His work helped establish Santa Cruz's identity as a city that values its architectural past. The **Downtown Historic District**, which includes many of his restoration projects, stands as a testament to his vision that old buildings deserve preservation, not demolition.
 
 O'Hearn's influence extended beyond individual buildings:
+
 - He demonstrated that historic preservation could be economically viable
 - His projects showed that modest working-class housing (like bungalow courts) deserved the same preservation attention as grand mansions
 - His signature landscaping aesthetic became a model for how to balance privacy and community in dense historic neighborhoods
